@@ -29,6 +29,7 @@ nav:
   - 'UCC111':
     - 'Overview': 'ucc111/index.md'
     - 'Labs':
+      - 'Lab 1 - The Phoenix Server': 'ucc111/labs/lab1.md'
       - 'Lab 1 - Presentation': 'ucc111/labs/lab1_presentation.md'
     - 'Presentations':
       - 'Disk Design': 'ucc111/presentations/disk_design.md'
