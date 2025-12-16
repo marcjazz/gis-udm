@@ -26,10 +26,19 @@ theme:
 
 nav:
   - 'Home': 'index.md'
-  - 'UCC121-1: Scripting':
-    - 'Course Plan': 'ucc121_1_plan.md'
-    - 'Session 1 Content': 'ucc121_1_session1_content.md'
-    - 'Session 1 Presentation': 'ucc121_1_session1_presentation.md'
+  - 'UCC111':
+    - 'Overview': 'ucc111/index.md'
+    - 'Labs':
+      - 'Lab 1 - Presentation': 'ucc111/labs/lab1_presentation.md'
+    - 'Presentations':
+      - 'Disk Design': 'ucc111/presentations/disk_design.md'
+  - 'UCC121':
+    - 'Overview': 'ucc121/index.md'
+    - 'Scripting (UCC121-1)':
+      - 'Course Plan': 'ucc121/scripting/index.md'
+      - 'Session 1': 'ucc121/scripting/session1.md'
+    - 'AI in Admin (UCC121-3)':
+      - 'Overview': 'ucc121/ai_in_admin/index.md'
 
 # Extensions
 markdown_extensions:

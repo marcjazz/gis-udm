@@ -1,1 +1,5 @@
 *.pdf
+# MkDocs
+site/
+mkdocs.yml.bak
+
