@@ -6,9 +6,9 @@
 - **Prerequisites:** **UCC121-1**. Solid shell scripting skills.
 - **Duration:** 12 hours (8 sessions of 1.5 hours each).
 - **Objectives:**
-    - Use AI assistants to accelerate problem-solving and code generation.
-    - Apply AI to concrete use cases: log analysis, security, monitoring.
-    - Understand the principles of "prompt engineering" adapted to system tasks.
+  - Use AI assistants to accelerate problem-solving and code generation.
+  - Apply AI to concrete use cases: log analysis, security, monitoring.
+  - Understand the principles of "prompt engineering" adapted to system tasks.
 - **Assessment:** Continuous assessment (Practical Labs), project, final exam.
 
 ## 8-Session Breakdown

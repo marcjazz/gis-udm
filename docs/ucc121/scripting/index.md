@@ -12,9 +12,9 @@ This document outlines the course plan for the "Shells, Scripting, and Data Mana
 - **Prerequisites:** Basic proficiency with the Linux command line (UCC111 or equivalent).
 - **Duration:** 12 hours (8 sessions of 1.5 hours each).
 - **Objectives:**
-    - Master advanced command-line tools.
-    - Create robust and modular shell scripts for automation.
-    - Manipulate text data and interact with a simple database.
+  - Master advanced command-line tools.
+  - Create robust and modular shell scripts for automation.
+  - Manipulate text data and interact with a simple database.
 - **Assessment:** Continuous assessment (Practical Labs), scripting project, final exam.
 
 ## 8-Session Breakdown

@@ -20,8 +20,8 @@ When you start an interactive shell, it automatically runs a script to set up yo
 
 - **Purpose:** To store all your personal customizations: aliases, functions, and environment variables.
 - **Activation:** Changes made to `.bashrc` are not applied automatically to your current session. You must load them by either:
-    1. Starting a new shell session.
-    2. Running the command `source ~/.bashrc`.
+  1. Starting a new shell session.
+  2. Running the command `source ~/.bashrc`.
 
 ### 3. Aliases: Your Command-Line Shortcuts
 
@@ -93,7 +93,7 @@ Environment variables are dynamic values that affect the processes and programs 
 - **View it:** `echo $PATH`
 - **Modify it:** To add a custom scripts folder (e.g., `~/bin`) to your PATH, you would add this to `.bashrc`:
   `export PATH="$HOME/bin:$PATH"
-  This tells the shell to look in`~/bin` first, then in all the other standard locations.
+This tells the shell to look in`~/bin` first, then in all the other standard locations.
 
 #### `PS1`
 
@@ -125,7 +125,7 @@ export PS1='[\033[01;32m\]\u@\h[\033[00m]:[\033[01;34m\]\w[\033[00m]\$ '
 4. **Customize your Prompt:** Add the colored `PS1` export line from the example.
 5. **Activate Changes:** Save the file and run `source ~/.bashrc`.
 6. **Test Everything:**
-    - Type `ll`. Does it show a detailed file listing?
-    - Type `type update`. Does it show that `update` is an alias?
-    - Use your new `mkcd` function: `mkcd test_directory`. Did it create the folder and move you inside it?
-    - Does your prompt look different and colorful?
+   - Type `ll`. Does it show a detailed file listing?
+   - Type `type update`. Does it show that `update` is an alias?
+   - Use your new `mkcd` function: `mkcd test_directory`. Did it create the folder and move you inside it?
+   - Does your prompt look different and colorful?
