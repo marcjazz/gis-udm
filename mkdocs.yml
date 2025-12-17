@@ -1,50 +1,68 @@
 site_name: GIS-UDM Course Plan
-site_url: https://your-github-username.github.io/gis-udm/
-repo_url: https://github.com/your-github-username/gis-udm
+site_url: https://learn.kdmarc.xyz
+repo_url: https://github.com/marcjazz/gis-udm
 
 theme:
-  name: material
-  features:
-    - navigation.sections
-    - navigation.top
-    - search.suggest
-    - search.highlight
+  name: shadcn
+  logo: assets/logo.svg
+
   palette:
-    # Palette toggle for light vs dark mode
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.expand
+  show_title: true
+  show_stargazers: false
+  icon: heroicons:rocket-launch
+  topbar_sections: true
+  show_datetime: true
 
 nav:
   - 'Home': 'index.md'
   - 'UCC111':
-    - 'Overview': 'ucc111/index.md'
-    - 'Labs':
-      - 'Lab 1 - The Phoenix Server': 'ucc111/labs/lab1.md'
+      - 'Overview': 'ucc111/index.md'
+      - 'Labs':
+          - 'Lab 1 - The Phoenix Server': 'ucc111/labs/lab1.md'
   - 'UCC121':
-    - 'Overview': 'ucc121/index.md'
-    - 'Scripting (UCC121-1)':
-      - 'Overview': 'ucc121/scripting/index.md'
-      - 'Session 1': 'ucc121/scripting/session1.md'
-    - 'AI in Admin (UCC121-3)':
-      - 'Overview': 'ucc121/ai_in_admin/index.md'
+      - 'Overview': 'ucc121/index.md'
+      - 'Scripting (UCC121-1)':
+          - 'Overview': 'ucc121/scripting/index.md'
+          - 'Mastering the Shell Environment': 'ucc121/scripting/session1.md'
+      - 'AI in Admin (UCC121-3)':
+          - 'Overview': 'ucc121/ai_in_admin/index.md'
 
 # Extensions
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
   - admonition
+  - codehilite
   - toc:
       permalink: true
+  - attr_list
+  - md_in_html
+  - shadcn.extensions.codexec
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/marcjazz
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/marco-kuidja/
+
+plugins:
+  - search
+  - excalidraw
+  - pygments:
+      light: autumn
+      dark: github-dark

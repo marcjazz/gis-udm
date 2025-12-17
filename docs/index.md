@@ -4,10 +4,13 @@ This site contains all the course plans, labs, and materials for the Professiona
 
 ## Available Courses
 
-Please navigate using the menu to find the course you are interested in. The main sections are:
+!!! info "UCC111 - Linux Foundational"
+    Covers the fundamentals of Linux installation, disk management, and package management.
+    [Go to course](./ucc111/index.md)
 
-- **[UCC111 - Linux Foundational](./ucc111/index.md):** Covers the fundamentals of Linux installation, disk management, and package management.
-- **[UCC121 - Linux Expert](./ucc121/index.md):** A two-part course covering advanced shell scripting and the use of AI in system administration.
+!!! info "UCC121 - Linux Expert"
+    A two-part course covering advanced shell scripting and the use of AI in system administration.
+    [Go to course](./ucc121/index.md)
 
 ## About This Site
 
