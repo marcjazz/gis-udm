@@ -44,6 +44,8 @@ nav:
           - 'Overview': 'ucc121/ai_in_admin/index.md'
       - 'Labs':
           - 'Lab 1 - Duplicate Files': 'ucc121/labs/scripting_lab1.md'
+  - 'UCC141':
+      - 'Overview': 'ucc141/index.md'
 
 # Extensions
 markdown_extensions:
