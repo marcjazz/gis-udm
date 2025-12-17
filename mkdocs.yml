@@ -23,7 +23,7 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.expand
-  show_title: true
+  show_title: false
   show_stargazers: false
   icon: heroicons:rocket-launch
   topbar_sections: true
@@ -31,21 +31,25 @@ theme:
 
 nav:
   - 'Home': 'index.md'
-  - 'UCC111':
-      - 'Overview': 'ucc111/index.md'
+  - 'Linux Fundationals':
+      - 'UCC111': 'ucc111/index.md'
+      - 'Linux Installation and Package Management':
+          - 'Overview': 'ucc111/installation_and_pkg_mgnt/index.md'
       - 'Labs':
           - 'Lab 1 - The Phoenix Server': 'ucc111/labs/lab1.md'
-  - 'UCC121':
-      - 'Overview': 'ucc121/index.md'
-      - 'Scripting (UCC121-1)':
+  - 'Linux Expert':
+      - 'UCC121': 'ucc121/index.md'
+      - 'Shell Scripting':
           - 'Overview': 'ucc121/scripting/index.md'
           - 'Mastering the Shell Environment': 'ucc121/scripting/session1.md'
-      - 'AI in Admin (UCC121-3)':
+      - 'AI in Administration':
           - 'Overview': 'ucc121/ai_in_admin/index.md'
       - 'Labs':
           - 'Lab 1 - Duplicate Files': 'ucc121/labs/scripting_lab1.md'
-  - 'UCC141':
-      - 'Overview': 'ucc141/index.md'
+  - 'Virtualization fundamentals':
+      - 'UCC141': 'ucc141/index.md'
+      - 'Virtualization Fundamentals':
+          - 'Overview': 'ucc141/virtualization_fundamentals/index.md'
 
 # Extensions
 markdown_extensions:
