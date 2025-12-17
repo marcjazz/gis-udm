@@ -1,5 +1,11 @@
-*.pdf
 # MkDocs
 site/
 mkdocs.yml.bak
 
+
+# Marp
+*.html
+*.md.bak
+*.pptx
+*.odp
+*.pdf

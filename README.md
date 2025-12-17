@@ -6,8 +6,7 @@ This repository contains course plans, labs, and presentation materials for vari
 
 All course content is organized and best viewed through our documentation site, which is automatically generated using [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-The live site is deployed to GitHub Pages and can be accessed here: **[https://your-github-username.github.io/gis-udm/](https://your-github-username.github.io/gis-udm/)** 
-*(Note: Remember to replace `your-github-username` with your actual GitHub username)*
+The live site is deployed to GitHub Pages and can be accessed here: **[https://learn.kdmarc.xyz/](https://learn.kdmarc.xyz/)** 
 
 ### Running Locally
 
@@ -15,7 +14,7 @@ To view the documentation site on your local machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-github-username/gis-udm.git
+    git clone https://github.com/marcjazz/gis-udm.git
     cd gis-udm
     ```
 
