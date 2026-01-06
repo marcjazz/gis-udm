@@ -42,6 +42,7 @@ nav:
       - 'Shell Scripting':
           - 'Overview': 'ucc121/scripting/index.md'
           - 'Mastering the Shell Environment': 'ucc121/scripting/session1.md'
+          - 'Introduction to Scripting': 'ucc121/scripting/session2.md'
       - 'AI in Administration':
           - 'Overview': 'ucc121/ai_in_admin/index.md'
       - 'Labs':
