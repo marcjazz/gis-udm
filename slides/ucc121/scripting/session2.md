@@ -14,7 +14,10 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ## **Today's Mission**
 
-<!-- _class: invert -->
+<!--
+_class: invert
+_backgroundImage: none
+-->
 
 We stop **typing** commands one by one.
 We start **building** tools that work for us.
@@ -122,7 +125,10 @@ read -p "Enter version: " version
 
 ---
 
-<!-- _class: invert -->
+<!--
+_class: invert
+_backgroundImage: none
+-->
 
 # **Live Coding**
 ## Let's put it all together.
