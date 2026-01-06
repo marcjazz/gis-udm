@@ -4,6 +4,7 @@ theme: gaia
 class: lead
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+color: #455a64
 ---
 
 # **Scripting 101**
@@ -16,7 +17,6 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 <!--
 _class: invert
-_backgroundImage: none
 -->
 
 We stop **typing** commands one by one.
@@ -127,7 +127,6 @@ read -p "Enter version: " version
 
 <!--
 _class: invert
-_backgroundImage: none
 -->
 
 # **Live Coding**
