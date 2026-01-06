@@ -96,21 +96,21 @@ Your LPIC-101/102 knowledge is sound, but a year is a long time. Refresh your me
    - On the server, install `nginx`: `apt install nginx`.
    - Create a simple dummy Debian package. You don't need to write code; the goal is to create the package structure.
 
-     ```bash
-     # Install packaging tools
-     sudo apt install build-essential devscripts debhelper
-     # Create a project
-     mkdir ~/dummy-pkg-1.0 && cd ~/dummy-pkg-1.0
-     dh_make --native -s -y
-     # Build the package (ignore warnings)
-     debuild -us -uc
-     ```
+```bash
+# Install packaging tools
+sudo apt install build-essential devscripts debhelper dh-make
+# Create a project
+mkdir ~/dummy-pkg-1.0 && cd ~/dummy-pkg-1.0
+dh_make --native -s -y
+# Build the package (ignore warnings)
+debuild -us -uc
+```
 
-   - You will find a `.deb` file in the parent directory.
-   - Create a directory in the `nginx` web root (`/var/www/html/debian`) and copy your `.deb` file there.
-   - Configure `nginx` to serve this directory.
-   - On the server itself, add your own `nginx` server as an APT repository in `/etc/apt/sources.list`.
-   - Run `apt update` and then install your `dummy-pkg`.
+    - You will find a `.deb` file in the parent directory.
+    - Create a directory in the `nginx` web root (`/var/www/html/debian`) and copy your `.deb` file there.
+    - Configure `nginx` to serve this directory.
+    - On the server itself, add your own `nginx` server as an APT repository in `/etc/apt/sources.list`.
+    - Run `apt update` and then install your `dummy-pkg`.
 
 ---
 
@@ -123,7 +123,7 @@ Your LPIC-101/102 knowledge is sound, but a year is a long time. Refresh your me
 1. **Simulated Disaster: GRUB is Gone!**
 
    - On your working `phoenix-server` from Level 1, simulate a bootloader overwrite:
-     `sudo dd if=/dev/zero of=/dev/vda bs=446 count=1`
+     `sudo dd if=/dev/zero of=/dev/sda bs=446 count=1`
    - Reboot the VM. It will fail to boot, likely with a "No bootable medium" error. The server is dead. Or is it?
 
 2. **Manual System Rescue:**
@@ -134,7 +134,7 @@ Your LPIC-101/102 knowledge is sound, but a year is a long time. Refresh your me
    - The key step: **`chroot /target`**. You are now inside your broken system, with the tools from the live CD.
    - **Your task:** From within the chroot, fix the system. What commands do you need to run?
      - You'll need to mount `/boot`.
-   - You'll need to reinstall GRUB. (Hint: `grub-install /dev/vda`)
+   - You'll need to reinstall GRUB. (Hint: `grub-install /dev/sda1`)
    - You might need to update GRUB's configuration.
    - Exit the `chroot`, reboot without the ISO, and watch your server rise from the ashes.
 
