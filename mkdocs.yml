@@ -47,7 +47,10 @@ nav:
           - 'Lab 1 - Duplicate Files': 'ucc121/labs/scripting_lab1.md'
   - 'Virtualization Fundamentals':
       - 'UCC141': 'ucc141/index.md'
-      - 'Virtualization Fundamentals': 'ucc141/virtualization_fundamentals/index.md'
+      - 'Virtualization Fundamentals':
+          - 'Overview': 'ucc141/virtualization_fundamentals/index.md'
+          - 'Hypervisors Deep Dive': 'ucc141/virtualization_fundamentals/session2.md'
+          - 'Creating Your First VM': 'ucc141/virtualization_fundamentals/session3.md'
 
 # Extensions
 markdown_extensions:
