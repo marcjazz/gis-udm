@@ -56,8 +56,6 @@ nav:
 markdown_extensions:
   - admonition
   - codehilite
-  - toc:
-      permalink: true
   - attr_list
   - md_in_html
   - shadcn.extensions.codexec
@@ -67,7 +65,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/marcjazz
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/marco-kuidja/
+      link: https://www.linkedin.com/in/kuidja-marco/
 
 plugins:
   - search
