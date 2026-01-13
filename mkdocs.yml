@@ -51,6 +51,7 @@ nav:
           - 'Overview': 'ucc141/virtualization_fundamentals/index.md'
           - 'Hypervisors Deep Dive': 'ucc141/virtualization_fundamentals/session2.md'
           - 'Creating Your First VM': 'ucc141/virtualization_fundamentals/session3.md'
+          - 'VM Hardware and Configuration': 'ucc141/virtualization_fundamentals/session4.md'
 
 # Extensions
 markdown_extensions:
