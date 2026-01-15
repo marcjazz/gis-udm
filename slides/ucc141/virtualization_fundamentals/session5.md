@@ -1,0 +1,125 @@
+---
+theme: gaia
+---
+
+# UCC141-1: Virtualization Fundamentals
+## Session 5: Virtual Network Modes in Hypervisors
+
+---
+
+## The Virtual Switchboard
+
+VMs behave like separate computers, but they need a network connection.
+
+- **The Hypervisor:** Acts as a "Smart Switchboard".
+- **The Choice:** You decide who the VM can talk to:
+    - The Internet?
+    - The Local Network (LAN)?
+    - Only the Host?
+    - Only other VMs?
+
+---
+
+## 1. NAT (Network Address Translation)
+
+**"The Home Router Mode"**
+
+- **Concept:** VM sits behind the Host. Shares the Host's IP address to talk to the world.
+- **Analogy:** Your phone on home Wi-Fi.
+- **Connectivity:**
+    - VM -> Internet: **Yes**
+    - Internet -> VM: **No** (Protected)
+- **Best For:** Browsing, installing updates, general use.
+
+---
+
+## 2. Bridged Networking
+
+**"The Direct Connection"**
+
+- **Concept:** VM connects directly to the physical LAN. It looks like a separate physical device.
+- **Analogy:** Plugging a laptop into the wall switch next to your PC.
+- **Connectivity:**
+    - VM gets its own IP from the physical router.
+    - Full access (Inbound & Outbound).
+- **Best For:** Servers (Web, Game) that need to be seen by others.
+
+---
+
+## 3. Host-Only Networking
+
+**"The Private Channel"**
+
+- **Concept:** A private network between the **Host** and the **VM**.
+- **Analogy:** A crossover cable connecting two computers directly.
+- **Connectivity:**
+    - **No Internet Access.**
+    - Host can talk to VM; VM can talk to Host.
+- **Best For:** Secure development, testing tools without outside interference.
+
+---
+
+## 4. Internal Networking
+
+**"The Isolated Lab"**
+
+- **Concept:** A closed network where VMs can only talk to *other VMs*.
+- **Analogy:** A sealed room with computers. No doors.
+- **Connectivity:**
+    - No Host access. No Internet access.
+    - Complete isolation.
+- **Best For:** Malware analysis, practicing network attacks/defense safely.
+
+---
+
+## Comparison Summary
+
+| Feature | NAT | Bridged | Host-Only | Internal |
+| :--- | :--- | :--- | :--- | :--- |
+| **IP Source** | Hypervisor | LAN Router | Hypervisor | None/Manual |
+| **Internet** | Yes | Yes | No | No |
+| **Visible to LAN** | No | Yes | No | No |
+| **Security** | High | Low (Exposed) | Medium | Very High |
+
+---
+
+## Lab: Network Configuration
+
+**Objective:** Configure two VMs with different modes.
+
+1.  **VM1 (Host-Only):**
+    -   Can it ping the Host? (Should be YES)
+    -   Can it ping Google? (Should be NO)
+2.  **VM2 (Bridged):**
+    -   Check IP: Should be in same range as Host (e.g., `192.168.1.x`).
+    -   Can it ping the Internet? (Should be YES)
+
+---
+
+## Verification & Troubleshooting
+
+**Commands:**
+-   **Check IP:** `ipconfig` (Windows) / `ip addr` (Linux)
+-   **Check Connection:** `ping 8.8.8.8` or `ping google.com`
+
+**Common Issues:**
+-   **Bridged fails?** Wi-Fi adapters sometimes reject promiscuous mode. Try Ethernet.
+-   **No IP?** Check if the virtual cable is "Connected" in settings.
+-   **Ping fails?** Host firewall might be blocking it.
+
+---
+
+## Knowledge Check
+
+1.  Which mode hides the VM behind the Host?
+    -   *NAT*
+2.  Which mode makes the VM appear as a real device on the LAN?
+    -   *Bridged*
+3.  Which mode is best for dangerous malware testing?
+    -   *Internal*
+
+---
+
+## Questions?
+
+**Next Session:** Advanced Storage Management
