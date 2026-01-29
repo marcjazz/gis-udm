@@ -53,6 +53,8 @@ nav:
           - 'Creating Your First VM': 'ucc141/virtualization_fundamentals/session3.md'
           - 'VM Hardware and Configuration': 'ucc141/virtualization_fundamentals/session4.md'
           - 'Virtual Network Modes in Hypervisors': 'ucc141/virtualization_fundamentals/session5.md'
+          - 'Snapshots for State Management': 'ucc141/virtualization_fundamentals/session6.md'
+
 
 # Extensions
 markdown_extensions:
