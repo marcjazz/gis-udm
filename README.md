@@ -55,7 +55,7 @@ To serve the slides with live-reloading:
 marp --server slides/
 ```
 
-This will start a server and you can navigate to the specific presentation file in your browser (e.g., `http://localhost:8080/ucc111/disk_design.md`).
+This will start a server and you can navigate to the specific presentation file in your browser (e.g., `http://localhost:8080/linux_fundamentals/disk_design.md`).
 
 ### Exporting Slides
 
@@ -64,18 +64,18 @@ You can export the Markdown slides into HTML, PDF, or PPTX formats.
 1.  **Export to HTML:**
 
     ```bash
-    marp slides/ucc111/disk_design.md -o presentation.html
+    marp slides/linux_fundamentals/disk_design.md -o presentation.html
     ```
 
 2.  **Export to PDF:**
 
     ```bash
-    marp slides/ucc111/disk_design.md --pdf -o presentation.pdf
+    marp slides/linux_fundamentals/disk_design.md --pdf -o presentation.pdf
     ```
 
 3.  **Export to PowerPoint:**
 
     ```bash
-    marp slides/ucc111/disk_design.md --pptx -o presentation.pptx
+    marp slides/linux_fundamentals/disk_design.md --pptx -o presentation.pptx
     ```
 

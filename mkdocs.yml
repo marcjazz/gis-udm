@@ -32,37 +32,37 @@ theme:
 nav:
   - 'Home': 'index.md'
   - 'Linux Fundamentals':
-      - 'UCC111': 'ucc111/index.md'
-      - 'Package Management': 'ucc111/installation_and_pkg_mgnt/index.md'
+      - 'Introduction': 'linux_fundamentals/index.md'
+      - 'Package Management': 'linux_fundamentals/installation_and_pkg_mgnt/index.md'
       - 'Labs':
-          - 'Lab 1': 'ucc111/labs/lab1.md'
+          - 'Lab 1': 'linux_fundamentals/labs/lab1.md'
   - 'Linux Expert':
-      - 'UCC121': 'ucc121/index.md'
+      - 'Introduction': 'linux_expert/index.md'
       - 'Shell Scripting':
-          - 'Overview': 'ucc121/scripting/index.md'
-          - 'Shell Environment': 'ucc121/scripting/session1.md'
-          - 'Scripting Intro': 'ucc121/scripting/session2.md'
-          - 'Bash Basics': 'ucc121/scripting/session3.md'
-          - 'Control Structures': 'ucc121/scripting/session4.md'
-          - 'Loops': 'ucc121/scripting/session5.md'
-          - 'Functions': 'ucc121/scripting/session6.md'
-          - 'SQL Intro': 'ucc121/scripting/session7.md'
-          - 'Process Automation': 'ucc121/scripting/session8.md'
-      - 'AI Admin': 'ucc121/ai_in_admin/index.md'
+          - 'Overview': 'linux_expert/scripting/index.md'
+          - 'Shell Environment': 'linux_expert/scripting/session1.md'
+          - 'Scripting Intro': 'linux_expert/scripting/session2.md'
+          - 'Bash Basics': 'linux_expert/scripting/session3.md'
+          - 'Control Structures': 'linux_expert/scripting/session4.md'
+          - 'Loops': 'linux_expert/scripting/session5.md'
+          - 'Functions': 'linux_expert/scripting/session6.md'
+          - 'SQL Intro': 'linux_expert/scripting/session7.md'
+          - 'Process Automation': 'linux_expert/scripting/session8.md'
+      - 'AI Admin': 'linux_expert/ai_in_admin/index.md'
       - 'Labs':
-          - 'Lab 1': 'ucc121/labs/scripting_lab1.md'
+          - 'Lab 1': 'linux_expert/labs/scripting_lab1.md'
   - 'Virtualization Fundamentals':
-      - 'UCC141': 'ucc141/index.md'
+      - 'Introduction': 'virtualization/index.md'
       - 'Virtualization':
-          - 'Overview': 'ucc141/virtualization_fundamentals/index.md'
-          - 'Virtualization Intro': 'ucc141/virtualization_fundamentals/session1.md'
-          - 'Hypervisors': 'ucc141/virtualization_fundamentals/session2.md'
-          - 'First VM': 'ucc141/virtualization_fundamentals/session3.md'
-          - 'VM Hardware': 'ucc141/virtualization_fundamentals/session4.md'
-          - 'Network Modes': 'ucc141/virtualization_fundamentals/session5.md'
-          - 'Snapshots': 'ucc141/virtualization_fundamentals/session6.md'
-          - 'Cloning': 'ucc141/virtualization_fundamentals/session7.md'
-          - 'Automation': 'ucc141/virtualization_fundamentals/session8.md'
+          - 'Overview': 'virtualization/virtualization_fundamentals/index.md'
+          - 'Virtualization Intro': 'virtualization/virtualization_fundamentals/session1.md'
+          - 'Hypervisors': 'virtualization/virtualization_fundamentals/session2.md'
+          - 'First VM': 'virtualization/virtualization_fundamentals/session3.md'
+          - 'VM Hardware': 'virtualization/virtualization_fundamentals/session4.md'
+          - 'Network Modes': 'virtualization/virtualization_fundamentals/session5.md'
+          - 'Snapshots': 'virtualization/virtualization_fundamentals/session6.md'
+          - 'Cloning': 'virtualization/virtualization_fundamentals/session7.md'
+          - 'Automation': 'virtualization/virtualization_fundamentals/session8.md'
 
 
 # Extensions
