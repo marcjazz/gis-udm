@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Core Palette */
+    --brand-primary: #1e293b;
+    /* slate-800 */
+    --brand-accent: #6366f1;
+    /* indigo-500 */
+    --brand-accent-hover: #4f46e5;
+
+    /* Text and Backgrounds */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --bg-main: #0f172a;
+    /* slate-900 */
+    --bg-sidebar: #1e293b;
+
+    /* UI Elements */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Containers */
+body,
+.body,
+.main,
+.doc {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+.article {
+    background-color: var(--bg-main);
+}
+
+/* Navbar & Dropdowns */
+.navbar {
+    background-color: var(--bg-sidebar) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-dropdown {
+    background-color: var(--bg-sidebar) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: none !important;
+}
+
+.navbar-dropdown .navbar-item {
+    color: var(--text-main) !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar-dropdown .navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--brand-accent) !important;
+}
+
+/* Toolbar (Breadcrumbs Bar) */
+.toolbar {
+    background-color: var(--bg-sidebar) !important;
+    /* Match sidebar for continuity */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    height: 3rem;
+}
+
+.breadcrumbs {
+    padding-left: 1rem !important;
+}
+
+.breadcrumbs a {
+    color: var(--text-main) !important;
+    opacity: 0.7;
+}
+
+.breadcrumbs a:hover {
+    color: var(--brand-accent) !important;
+    opacity: 1;
+}
+
+.breadcrumbs li::before {
+    color: var(--text-muted) !important;
+}
+
+.home-link {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+/* Sidebar Navigation Tree */
+.nav {
+    background-color: var(--bg-sidebar) !important;
+}
+
+.nav-container {
+    background-color: var(--bg-sidebar) !important;
+}
+
+.nav-menu {
+    background-color: transparent !important;
+    padding-top: 1rem !important;
+}
+
+.nav-panel-menu {
+    background-color: var(--bg-sidebar) !important;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 0px !important;
+}
+
+/* High-level titles (Component/Module headers) */
+.nav-menu h3.title,
+.nav-item[data-depth="0"]>.nav-link,
+.nav-item[data-depth="0"]>.nav-text {
+    font-weight: 700 !important;
+    color: var(--brand-accent) !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 1rem 1rem 0.5rem 1rem !important;
+    display: block;
+}
+
+/* Tree lines simulation (optional, but requested "as a tree") */
+.nav-item[data-depth="1"],
+.nav-item[data-depth="2"] {
+    position: relative;
+    padding-left: 1.5rem !important;
+}
+
+.nav-item[data-depth="1"]::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link,
+.nav-text {
+    color: var(--text-main) !important;
+    opacity: 0.7;
+    padding: 0.4rem 1rem !important;
+    display: block;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover,
+.nav-link.is-active,
+.is-current-page>.nav-link {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    opacity: 1;
+}
+
+.nav-icon {
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+/* Download Button */
+.button.is-primary {
+    background-color: var(--brand-accent) !important;
+    border-color: var(--brand-accent) !important;
+    color: #ffffff !important;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.button.is-primary:hover {
+    background-color: var(--brand-accent-hover) !important;
+    transform: translateY(-1px);
+}
+
+/* TOC (Table of Contents) */
+.toc {
+    background-color: transparent;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toc-menu li a {
+    color: var(--text-muted);
+}
+
+.toc-menu li a:hover {
+    color: var(--brand-accent);
+}
+
+/* Article Styling */
+.doc {
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+h3,
+h4,
+.title {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    /* Force high contrast for headers */
+    letter-spacing: -0.025em;
+    border-bottom: none;
+}
+
+/* Card Styling (exampleblocks) */
+.exampleblock,
+.exampleblock>.content {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--text-main) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.exampleblock .title {
+    color: var(--brand-accent) !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem;
+}
+
+/* Fix for any remaining white backgrounds */
+.admonitionblock,
+.listingblock,
+.literalblock,
+.sidebarblock {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+code {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--brand-accent);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Buttons and Links */
+a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--brand-accent-hover);
+}
+
+/* Admonition Overrides */
+.admonitionblock {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Version / Component Selector (Bottom of Sidebar) */
+.nav-panel-explore {
+    background-color: var(--bg-sidebar) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.nav-panel-explore .context {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-main) !important;
+}
+
+.nav-panel-explore .list {
+    background-color: var(--bg-sidebar) !important;
+}
+
+.nav-panel-explore .component,
+.nav-panel-explore .version {
+    color: var(--text-main) !important;
+}
+
+.nav-panel-explore .component .title {
+    color: var(--brand-accent) !important;
+}
+
+footer {
+    display: none;
+}
+
+.content {
+    justify-content: space-between;
+}
+
+.nav-panel-explore {
+    display: none;
+}
