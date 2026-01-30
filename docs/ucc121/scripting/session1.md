@@ -117,14 +117,57 @@ export PS1='[\u@\h \w]\$ '
 export PS1='[\033[01;32m\]\u@\h[\033[00m]:[\033[01;34m\]\w[\033[00m]\$ '
 ```
 
-### 6. Lab Exercises (TP/CC)
+### 6. Advanced Customization & Less Common Tips
+
+Beyond basic aliases and variables, you can fine-tune the shell's behavior to suit your workflow.
+
+#### Shell Options (`shopt` and `set`)
+
+- **`shopt -s autocd`**: Allows you to change directory by simply typing the path (no `cd` needed).
+- **`shopt -s cdspell`**: Automatically corrects minor spelling errors in `cd` command directory names.
+- **`set -o noclobber`**: Prevents you from accidentally overwriting an existing file when using redirection (e.g., `>`).
+
+#### The `CDPATH` Variable
+
+Similar to `PATH`, `CDPATH` defines a search path for the `cd` command.
+
+```bash
+export CDPATH=".:~:~/Projects"
+```
+
+If you are in `/tmp` and type `cd gis-udm`, and `gis-udm` is in `~/Projects`, the shell will find it and move you there immediately.
+
+#### History Management
+
+You can control how your command history is saved to avoid duplicates or sensitive commands.
+
+```bash
+export HISTCONTROL=ignoreboth  # Don't save lines starting with space or duplicate lines
+export HISTSIZE=10000          # Number of commands to keep in memory
+export HISTFILESIZE=20000      # Number of commands to save to the history file
+```
+
+#### Git Integration in Prompt
+
+If you work with Git, showing the current branch in your prompt is incredibly useful.
+
+```bash
+# Add this function to your .bashrc
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\]\$ "
+```
+
+### 7. Lab Exercises (TP/CC)
 
 1. **Open `~/.bashrc`:** Use a text editor like `nano ~/.bashrc`.
 2. **Add Aliases:** Add the `ll` and `update` aliases shown in the examples above.
 3. **Add a Function:** Add the `mkcd` function.
 4. **Customize your Prompt:** Add the colored `PS1` export line from the example.
-5. **Activate Changes:** Save the file and run `source ~/.bashrc`.
-6. **Test Everything:**
+5. **Configure Shell Options:** Enable `autocd` and `cdspell` using `shopt`.
+6. **Activate Changes:** Save the file and run `source ~/.bashrc`.
+7. **Test Everything:**
    - Type `ll`. Does it show a detailed file listing?
    - Type `type update`. Does it show that `update` is an alias?
    - Use your new `mkcd` function: `mkcd test_directory`. Did it create the folder and move you inside it?

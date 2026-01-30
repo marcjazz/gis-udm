@@ -13,10 +13,11 @@ When the VM is off, the hypervisor can safely rewire the virtual motherboard.
 
 You typically must power off the VM to change:
 
-* RAM size
-* Number of CPU cores
-* Storage controllers
-* Adding or removing virtual hard disks
+- RAM size
+- Number of CPU cores
+- Storage controllers
+- Adding or removing virtual hard disks
+- **Virtual Chipset/Firmware:** Changing between legacy BIOS and UEFI/EFI.
 
 Why?
 Because the guest OS detects these at boot time, just like a real BIOS/UEFI scan.
@@ -25,9 +26,10 @@ Because the guest OS detects these at boot time, just like a real BIOS/UEFI scan
 
 Some components are designed to be hot-swappable:
 
-* Network adapter connection (plug/unplug the cable)
-* CD/DVD ISO files
-* USB devices
+- Network adapter connection (plug/unplug the cable)
+- CD/DVD ISO files
+- USB devices
+- **Hot-Add RAM/CPU (Advanced Feature):** Some enterprise hypervisors (like VMware or KVM with specific configurations) allow adding or removing RAM/CPU while the VM is running, provided the Guest OS supports the ACPI signals correctly. This is rare in Type 2 hypervisors like VirtualBox.
 
 These behave like plugging in a USB stick or Ethernet cable on a real computer.
 
@@ -39,41 +41,40 @@ Your **host OS** and **guest OS** share the same physical hardware. Virtualizati
 
 ### RAM Allocation (System > Motherboard)
 
-* RAM assigned to the VM is **reserved while the VM runs**.
-* If you give too much RAM to the VM:
-
-  * The host OS slows down
-  * Everything becomes laggy
+- RAM assigned to the VM is **reserved while the VM runs**.
+- If you give too much RAM to the VM:
+  - The host OS slows down
+  - Everything becomes laggy
 
 That green zone in VirtualBox is a safety buffer.
 Staying inside it keeps the host breathing comfortably. 🫁
 
 **Best practice:**
 
-* Linux VMs: 1–2 GB for light tasks, 4 GB+ for desktops
-* Windows VMs: 4 GB minimum for usability
+- Linux VMs: 1–2 GB for light tasks, 4 GB+ for desktops
+- Windows VMs: 4 GB minimum for usability
+- **Less Common Topic: Memory Ballooning:** Explain that Type 1 hypervisors use a "balloon driver" inside the guest to reclaim unused RAM back to the host when the physical system is under heavy load, which is more efficient than hard capping.
 
 ### CPU Allocation (System > Processor)
 
-* Each VM “core” is a **virtual CPU thread**, not a physical core.
-* Assigning more cores:
-
-  * Helps with compilation, compression, databases
-  * Does *not* help much for single-threaded tasks
+- Each VM “core” is a **virtual CPU thread**, not a physical core.
+- Assigning more cores:
+  - Helps with compilation, compression, databases
+  - Does _not_ help much for single-threaded tasks
 
 #### Execution Cap
 
 This is a CPU speed governor:
 
-* 100% = VM can use full assigned CPU time
-* 50% = VM can only use half of its allowed CPU
+- 100% = VM can use full assigned CPU time
+- 50% = VM can only use half of its allowed CPU
 
 This is useful on shared machines or labs where one VM must not dominate.
 
 #### PAE/NX
 
-* **PAE** allows 32-bit OSs to access more than 4 GB RAM
-* **NX** helps with memory protection and security
+- **PAE** allows 32-bit OSs to access more than 4 GB RAM
+- **NX** helps with memory protection and security
 
 Most modern OSs expect this to be enabled.
 
@@ -87,21 +88,18 @@ Virtual disks are just files on the host, but to the guest OS they look like rea
 
 The controller defines how the disk “connects” to the VM.
 
-* **IDE**
-
-  * Old and slow
-  * Used mainly for legacy OSs or CD/DVD drives
-
-* **SATA**
-
-  * Default and reliable
-  * Good compatibility and performance
-
-* **NVMe**
-
-  * Simulates modern SSDs
-  * Faster I/O, lower latency
-  * Best for modern Linux and Windows guests
+- **IDE**
+  - Old and slow
+  - Used mainly for legacy OSs or CD/DVD drives
+- **SATA**
+  - Default and reliable
+  - Good compatibility and performance
+- **NVMe**
+  - Simulates modern SSDs
+  - Faster I/O, lower latency
+  - Best for modern Linux and Windows guests
+- **SCSI (LSI Logic/Paravirtualized SCSI):**
+  - **Less Common Use Case:** Often seen in enterprise hypervisors (VMware/Xen). Paravirtualized drivers (like VMXNET3 in VMware or virtio-scsi) offer superior I/O performance because the guest OS is "aware" it is virtualized and communicates more efficiently with the hypervisor, bypassing some traditional hardware emulation layers.
 
 Choose SATA for compatibility, NVMe for performance.
 
@@ -111,25 +109,18 @@ Choose SATA for compatibility, NVMe for performance.
 
 Each format is like a suitcase built for a different airline.
 
-* **VDI**
-
-  * Best choice for VirtualBox
-  * Supports snapshots, resizing, encryption
-
-* **VMDK**
-
-  * Good for moving VMs between VirtualBox and VMware
-  * Common in enterprise environments
-
-* **VHD/VHDX**
-
-  * Designed for Microsoft ecosystems
-  * Ideal for Hyper-V and Azure
-
-* **QCOW2**
-
-  * Advanced features like compression and snapshots
-  * Mostly used with KVM/QEMU
+- **VDI**
+  - Best choice for VirtualBox
+  - Supports snapshots, resizing, encryption
+- **VMDK**
+  - Good for moving VMs between VirtualBox and VMware
+  - Common in enterprise environments
+- **VHD/VHDX**
+  - Designed for Microsoft ecosystems
+  - Ideal for Hyper-V and Azure
+- **QCOW2**
+  - Advanced features like compression and snapshots
+  - Mostly used with KVM/QEMU
 
 **Rule of thumb:**
 Stay native unless you plan to migrate.
@@ -142,18 +133,18 @@ This is about **when** disk space is reserved.
 
 #### Dynamically Allocated
 
-* The file grows as data is written
-* A 50 GB disk with 5 GB used = ~5 GB on host
-* Ideal for labs and testing
+- The file grows as data is written
+- A 50 GB disk with 5 GB used = ~5 GB on host
+- Ideal for labs and testing
 
 Downside:
 The disk file expands in chunks, which can slightly reduce performance over time.
 
 #### Fixed Size
 
-* Entire disk space reserved immediately
-* Faster and more predictable performance
-* Preferred for databases and servers
+- Entire disk space reserved immediately
+- Faster and more predictable performance
+- Preferred for databases and servers
 
 Trade-off:
 Uses full space even if mostly empty.
@@ -164,23 +155,22 @@ Uses full space even if mostly empty.
 
 When you add a new disk in VirtualBox:
 
-* The hypervisor creates a new disk file
-* It connects it to the virtual controller
-* The guest OS sees it as **raw hardware**
+- The hypervisor creates a new disk file
+- It connects it to the virtual controller
+- The guest OS sees it as **raw hardware**
 
 The OS does **not** automatically use it.
 
 ### Inside the Guest OS (Linux Example)
 
 1. `lsblk` shows:
+   - `sda` → original system disk
+   - `sdb` → new, empty disk
 
-   * `sda` → original system disk
-   * `sdb` → new, empty disk
 2. You must:
-
-   * Create a partition
-   * Format it (ext4, xfs, etc.)
-   * Mount it to a directory
+   - Create a partition
+   - Format it (ext4, xfs, etc.)
+   - Mount it to a directory
 
 This separation mirrors real-world system administration skills.
 
@@ -190,30 +180,28 @@ This separation mirrors real-world system administration skills.
 
 ### Display
 
-* **Video Memory**
-
-  * Higher values allow higher resolutions
-  * Important for GUI desktops
-
-* **Graphics Controller**
-
-  * VMSVGA → Linux
-  * VBoxSVGA → Windows
+- **Video Memory**
+  - Higher values allow higher resolutions
+  - Important for GUI desktops
+- **Graphics Controller**
+  - VMSVGA → Linux
+  - VBoxSVGA → Windows
+  - **VBoxVGA (Legacy):** Mention this is required for older 32-bit OSs or specialized configurations where VBoxSVGA fails.
 
 Wrong choice = black screens or poor performance.
 
 ### Audio
 
-* Disabling audio:
-
-  * Saves CPU and RAM
-  * Useful for server VMs
+- Disabling audio:
+  - Saves CPU and RAM
+  - Useful for server VMs
+- **Advanced Use Case: Passthrough Audio:** In some hypervisors (Type 1), it's possible to dedicate a physical sound card to a specific VM, bypassing the host entirely, though this is highly platform-dependent.
 
 ### Network
 
-* Network adapters behave like virtual NICs
-* Mode (NAT, Bridged, Host-Only) defines how the VM talks to the world
-* Covered fully in the next session
+- Network adapters behave like virtual NICs
+- Mode (NAT, Bridged, Host-Only) defines how the VM talks to the world
+- Covered fully in the next session
 
 ---
 
@@ -225,31 +213,77 @@ Each lab task maps directly to real admin skills:
 
 You learn:
 
-* Capacity planning
-* Performance trade-offs
-* Host vs guest resource management
+- Capacity planning
+- Performance trade-offs
+- Host vs guest resource management
 
 ### Adding Storage
 
 You learn:
 
-* Disk provisioning
-* Storage expansion without downtime (enterprise reality)
-* OS-level disk management
+- Disk provisioning
+- Storage expansion without downtime (enterprise reality)
+- OS-level disk management
 
 ### Disk Initialization
 
 You practice:
 
-* Identifying block devices
-* Partitioning and formatting
-* Filesystem mounting
+- Identifying block devices
+- Partitioning and formatting
+- Filesystem mounting
 
 This is exactly what sysadmins do on cloud VMs every day.
 
 ---
 
-### Final Thought
+## 7. Final Thought
 
 Virtual machines are not fake computers.
 They are **software-defined hardware**. Once you understand that, configuring VMs stops being clicking menus and starts being engineering.
+
+---
+
+## Reflection & Further Research 🧭
+
+### Reflection Questions
+
+1. If snapshots depend on the original VM disk, what happens if that disk is deleted?
+2. Why do hypervisors warn administrators about long-lived snapshots?
+3. In what scenarios would reverting to a snapshot be dangerous rather than helpful?
+4. How does snapshot usage differ between test environments and production systems?
+
+---
+
+### Further Research Topics
+
+Learners may explore one or more of the following:
+
+- Difference between **full clone** and **linked clone**
+- How snapshot delta disks affect I/O performance
+- Snapshot handling in different hypervisors (VirtualBox, VMware, Hyper-V)
+- Why enterprise environments limit snapshot retention
+- Relationship between snapshots, clones, and templates
+
+---
+
+## Concept Bridge to Next Session
+
+### From Snapshots to Cloning
+
+```
+Snapshot
+---------
+One VM
+One Timeline
+Rollback-focused
+
+Clone / Template
+----------------
+Multiple VMs
+Independent Lifecycles
+Scale-focused
+```
+
+Snapshots look backward.
+Clones and templates look forward.

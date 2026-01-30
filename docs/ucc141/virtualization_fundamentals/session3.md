@@ -9,6 +9,7 @@
 Creating a Virtual Machine (VM) involves defining a software-based computer specification. When you click "New" in VirtualBox, you aren't building a physical machine, but you are creating a configuration file (typically `.vbox`) that tells the hypervisor what hardware to emulate.
 
 **The Wizard Steps:**
+
 1.  **Name & OS Type:** Naming the VM and selecting the target OS (e.g., Linux, Windows) helps the hypervisor apply optimal defaults.
 2.  **Memory Size:** Allocating RAM.
 3.  **Hard Disk:** Creating a virtual hard drive.
@@ -16,45 +17,54 @@ Creating a Virtual Machine (VM) involves defining a software-based computer spec
 ### 2. Allocating Virtual Hardware
 
 #### Virtual CPU (vCPU)
+
 By default, a new VM usually gets 1 vCPU. Modern hypervisors allow you to assign multiple cores.
 
 **Understanding vCPU vs. Core vs. Thread:**
 To allocate resources correctly, you must understand the hierarchy of physical vs. virtual processing:
--   **Physical Core:** A physical independent execution unit on your CPU chip. Most mainstream laptops today have 4 to 8 physical cores.
--   **Hardware Thread:** Modern CPUs use *Simultaneous Multithreading* (SMT, or Intel's "Hyper-Threading"). This technology allows a single physical core to behave like two logical processors by keeping the core's execution units busy more of the time.
--   **Logical Processor:** A CPU with 4 cores and SMT/Hyper-Threading has 8 **Logical Processors**. This is what the operating system and hypervisor see.
--   **vCPU (Virtual CPU):** This is what the hypervisor presents to the VM. In most cases, **1 vCPU maps to 1 Logical Processor (Hardware Thread)** on the host.
+
+- **Physical Core:** A physical independent execution unit on your CPU chip. Most mainstream laptops today have 4 to 8 physical cores.
+- **Hardware Thread:** Modern CPUs use _Simultaneous Multithreading_ (SMT, or Intel's "Hyper-Threading"). This technology allows a single physical core to behave like two logical processors by keeping the core's execution units busy more of the time.
+- **Logical Processor:** A CPU with 4 cores and SMT/Hyper-Threading has 8 **Logical Processors**. This is what the operating system and hypervisor see.
+- **vCPU (Virtual CPU):** This is what the hypervisor presents to the VM. In most cases, **1 vCPU maps to 1 Logical Processor (Hardware Thread)** on the host.
 
 **Constraint:** You cannot assign more virtual cores than your physical host possesses. Always check your host's core count.
 
 #### Hidden Hardware Features: PAE/NX
+
 When you select an OS version in VirtualBox, it often enables these key features automatically:
--   **PAE (Physical Address Extension):** Allows 32-bit processors to access more than 4 GB of RAM.
--   **NX (No-Execute) Bit:** A security feature that helps prevent malicious code from executing in data-only memory areas (e.g., buffer overflow attacks). It's also called XD (Execute Disable) on Intel CPUs.
+
+- **PAE (Physical Address Extension):** Allows 32-bit processors to access more than 4 GB of RAM.
+- **NX (No-Execute) Bit:** A security feature that helps prevent malicious code from executing in data-only memory areas (e.g., buffer overflow attacks). It's also called XD (Execute Disable) on Intel CPUs.
 
 #### Virtual RAM
+
 This is reserved from your physical host's memory.
--   **Rule of Thumb:** Never allocate more than 50-60% of your total host RAM to running VMs.
--   **The Swap Warning:** If you over-allocate RAM, your host will start "swapping" memory to the hard drive, causing extreme performance degradation (the "swap death spiral").
+
+- **Rule of Thumb:** Never allocate more than 50-60% of your total host RAM to running VMs.
+- **The Swap Warning:** If you over-allocate RAM, your host will start "swapping" memory to the hard drive, causing extreme performance degradation (the "swap death spiral").
 
 ### 3. Virtual Hard Disks
 
 A virtual disk is simply a large file on your host computer.
 
 **Common Formats:**
--   **VDI (VirtualBox Disk Image):** The native format for VirtualBox.
--   **VMDK (Virtual Machine Disk):** Format used by VMware. Good for compatibility.
+
+- **VDI (VirtualBox Disk Image):** The native format for VirtualBox.
+- **VMDK (Virtual Machine Disk):** Format used by VMware. Good for compatibility.
+- **VHD/VHDX:** Microsoft formats, useful for Hyper-V compatibility.
 
 **Allocation Types:**
--   **Dynamically Allocated:** The file starts small and grows as you save data inside the VM. Saves space initially.
--   **Fixed Size:** The full size is reserved immediately. Better performance, but takes up all the space upfront.
+
+- **Dynamically Allocated:** The file starts small and grows as you save data inside the VM. Saves space initially.
+- **Fixed Size:** The full size is reserved immediately. Better performance, but takes up all the space upfront.
 
 ### 4. Guest Operating Systems & ISO Images
 
 A new VM is like a computer with a blank hard drive. We need to install an Operating System (Guest OS).
 
--   **ISO Images:** Digital replicas of installation discs.
--   **Mounting:** You "insert" the ISO file into the VM's virtual optical drive via storage settings.
+- **ISO Images:** Digital replicas of installation discs.
+- **Mounting:** You "insert" the ISO file into the VM's virtual optical drive via storage settings.
 
 ### 5. Installing the Guest OS
 
@@ -66,10 +76,21 @@ A new VM is like a computer with a blank hard drive. We need to install an Opera
 
 1.  **Download an ISO:** Download the **Lubuntu** or **Debian** ISO image.
 2.  **Create a New VM:**
-    -   **Name:** `Lab1-Linux`
-    -   **Type:** Linux, **Version:** Ubuntu (64-bit) or Debian (64-bit)
-    -   **RAM:** 2048 MB (2 GB)
-    -   **HDD:** Create a new VDI, Dynamically Allocated, 20 GB.
+    - **Name:** `Lab1-Linux`
+    - **Type:** Linux, **Version:** Ubuntu (64-bit) or Debian (64-bit)
+    - **RAM:** 2048 MB (2 GB)
+    - **HDD:** Create a new VDI, Dynamically Allocated, 20 GB.
 3.  **Mount the ISO:** Go to `Settings > Storage`, click the "Empty" CD icon, and select your ISO.
 4.  **Install:** Start the VM and follow the installer.
 5.  **Verify:** Shut down, remove the ISO, and reboot into your new virtual Linux desktop.
+
+### Less Common Use Case: Boot Parameter Interaction
+
+- **Advanced Task:** During the installation phase, interrupt the boot process (often by pressing a key like ESC or Shift during the initial load) and examine the boot parameters. For Linux installers, try appending a parameter like `nomodeset` or specifying an initial root filesystem to see how these parameters affect hardware detection during the initial boot sequence.
+
+---
+
+## Further Reading
+
+- [VirtualBox VDI vs VMDK Format Comparison](https://example.com/vdi_vmdk_comparison) (Placeholder for deeper dive)
+- [Understanding PAE/NX in 32-bit OS Environments](https://example.com/pae_nx_intro) (Placeholder for deeper dive)
