@@ -4,13 +4,9 @@ This site contains all the course plans, labs, and materials for the Professiona
 
 ## Available Courses
 
-!!! info "Linux Fundamentals"
-    Covers the fundamentals of Linux installation, disk management, and package management.
-    [Go to course](./linux_fundamentals/index.md)
-
-!!! info "Linux Expert"
-    A two-part course covering advanced shell scripting and the use of AI in system administration.
-    [Go to course](./linux_expert/index.md)
+!!! info "Linux"
+    Covers the fundamentals of Linux installation, disk management, and package management, shell scripting and the use of AI in system administration.
+    [Go to course](./linux/index.md)
 
 !!! info "Virtualization Fundamentals"
     Covers virtualization fundamentals.

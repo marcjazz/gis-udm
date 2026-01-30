@@ -1,4 +1,4 @@
-site_name: GIS-UDM Course Plan
+site_name: Learn With Marco 
 site_url: https://learn.kdmarc.xyz
 repo_url: https://github.com/marcjazz/gis-udm
 
@@ -31,29 +31,28 @@ theme:
 
 nav:
   - 'Home': 'index.md'
-  - 'Linux Fundamentals':
-      - 'Introduction': 'linux_fundamentals/index.md'
-      - 'Package Management': 'linux_fundamentals/installation_and_pkg_mgnt/index.md'
-      - 'Labs':
-          - 'Lab 1': 'linux_fundamentals/labs/lab1.md'
-  - 'Linux Expert':
-      - 'Introduction': 'linux_expert/index.md'
+  - 'Linux':
+      - 'Linux': 'linux/index.md'
+      - 'Package Management': 
+          - 'Overview': 'linux/installation_and_pkg_mgnt/index.md'
+          
       - 'Shell Scripting':
-          - 'Overview': 'linux_expert/scripting/index.md'
-          - 'Shell Environment': 'linux_expert/scripting/session1_mastering_the_shell_environment.md'
-          - 'Scripting Intro': 'linux_expert/scripting/session2_introduction_to_shell_scripting.md'
-          - 'Bash Basics': 'linux_expert/scripting/session3_bash_scripting_fundamentals.md'
-          - 'Control Structures': 'linux_expert/scripting/session4_logic_and_control_structures.md'
-          - 'Loops': 'linux_expert/scripting/session5_loops_and_iteration.md'
-          - 'Functions': 'linux_expert/scripting/session6_functions_and_modularity.md'
-          - 'SQL Intro': 'linux_expert/scripting/session7_introduction_to_data_management_with_sql.md'
-          - 'Process Automation': 'linux_expert/scripting/session8_process_management_and_automation.md'
-      - 'AI Admin': 'linux_expert/ai_in_admin/index.md'
+          - 'Overview': 'linux/shell_scripting/index.md'
+          - 'Shell Environment': 'linux/shell_scripting/session1_mastering_the_shell_environment.md'
+          - 'Scripting Intro': 'linux/shell_scripting/session2_introduction_to_shell_scripting.md'
+          - 'Bash Basics': 'linux/shell_scripting/session3_bash_scripting_fundamentals.md'
+          - 'Control Structures': 'linux/shell_scripting/session4_logic_and_control_structures.md'
+          - 'Loops': 'linux/shell_scripting/session5_loops_and_iteration.md'
+          - 'Functions': 'linux/shell_scripting/session6_functions_and_modularity.md'
+          - 'SQL Intro': 'linux/shell_scripting/session7_introduction_to_data_management_with_sql.md'
+          - 'Process Automation': 'linux/shell_scripting/session8_process_management_and_automation.md'
+      - 'AI Admin': 'linux/ai_in_admin/index.md'
       - 'Labs':
-          - 'Lab 1': 'linux_expert/labs/scripting_lab1.md'
-  - 'Virtualization Fundamentals':
-      - 'Introduction': 'virtualization/index.md'
-      - 'Virtualization':
+          - 'Phoenix Server': 'linux/labs/phoenix_server.md'
+          - 'Shell Scripting': 'linux/labs/shell_scripting.md'
+  - 'Virtualization':
+      - 'Virtualization': 'virtualization/index.md'
+      - 'Virtualization Fundamentals':
           - 'Overview': 'virtualization/virtualization_fundamentals/index.md'
           - 'Virtualization Intro': 'virtualization/virtualization_fundamentals/session1_introduction_to_virtualization.md'
           - 'Hypervisors': 'virtualization/virtualization_fundamentals/session2_hypervisors_deep_dive.md'
