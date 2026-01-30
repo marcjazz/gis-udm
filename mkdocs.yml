@@ -35,6 +35,14 @@ nav:
       - 'Linux': 'linux/index.md'
       - 'Package Management': 
           - 'Overview': 'linux/installation_and_pkg_mgnt/index.md'
+          - 'Ecosystem Intro': 'linux/installation_and_pkg_mgnt/session1_introduction_and_ecosystem.md'
+          - 'Disk Design': 'linux/installation_and_pkg_mgnt/session2_disk_design_and_filesystems.md'
+          - 'Boot Process': 'linux/installation_and_pkg_mgnt/session3_boot_process_and_grub2.md'
+          - 'Shared Libraries': 'linux/installation_and_pkg_mgnt/session4_shared_libraries.md'
+          - 'Debian/APT': 'linux/installation_and_pkg_mgnt/session5_debian_package_management.md'
+          - 'RedHat/DNF': 'linux/installation_and_pkg_mgnt/session6_redhat_package_management.md'
+          - 'LVM': 'linux/installation_and_pkg_mgnt/session7_lvm.md'
+          - 'Hardening': 'linux/installation_and_pkg_mgnt/session8_hardening_and_recovery.md'
           
       - 'Shell Scripting':
           - 'Overview': 'linux/shell_scripting/index.md'
