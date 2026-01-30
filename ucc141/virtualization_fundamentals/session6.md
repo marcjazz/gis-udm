@@ -1,0 +1,374 @@
+# UCC141-1, Session 6: Snapshots for State Management
+
+By the end of this session, learners will be able to:
+
+- Define VM snapshots and explain how they work internally
+- Create, revert, and delete snapshots safely
+- Interpret snapshot trees and understand delta disks
+- Use snapshots to recover from configuration failures
+- Apply snapshot best practices and avoid common pitfalls
+
+---
+
+## 1. What Is a Snapshot? (With Diagram)
+
+A **snapshot** is a point-in-time record of a virtual machine’s state, mainly its disk contents and sometimes its memory.
+
+### Snapshot Concept Diagram
+
+```mermaid
+Before Snapshot
+----------------
+[ VM Disk.vmdk ]
+       |
+       v
+ Running VM
+
+After Snapshot
+--------------
+[ VM Disk.vmdk ]  (Read-only)
+       |
+       v
+[ Delta Disk 0001.vmdk ]
+       |
+       v
+ Running VM
+```
+
+Key idea:
+
+- The original disk is frozen
+- All new changes go into a **delta disk**
+- Reverting discards delta changes
+
+---
+
+## 2. Snapshot Tree Explained (Visual)
+
+Snapshots can form a tree if multiple snapshots are taken.
+
+```mermaid
+Base Disk
+   |
+   +-- Snapshot A
+   |       |
+   |       +-- Snapshot B
+   |
+   +-- Snapshot C
+```
+
+Meaning:
+
+- Snapshot B depends on Snapshot A
+- Deleting Snapshot A affects Snapshot B
+- Longer chains = slower disk performance
+
+---
+
+## 3. Snapshot vs Backup (Comparison Table)
+
+| Feature         | Snapshot | Backup |
+| --------------- | -------- | ------ |
+| Independent     | No       | Yes    |
+| Long-term use   | No       | Yes    |
+| Fast rollback   | Yes      | No     |
+| Production-safe | Limited  | Yes    |
+
+Snapshots are **temporary safety checkpoints**, not archival storage.
+
+---
+
+## 4. When to Use Snapshots (Use Cases)
+
+Good use cases:
+
+- Before software installation
+- Before configuration changes
+- OS updates
+- Training labs
+- Testing risky commands
+
+Bad use cases:
+
+- Databases in production
+- Long-term storage
+- Disaster recovery
+
+---
+
+## 5. Snapshot Lifecycle Diagram
+
+```mermaid
+Take Snapshot
+     |
+     v
+Make Changes
+     |
+     v
+[ Works? ] ---- Yes ----> Delete Snapshot
+     |
+    No
+     |
+     v
+Revert to Snapshot
+```
+
+---
+
+## 6. Practical Lab: Snapshot Recovery with a Web Server
+
+### Lab Objective
+
+Use a snapshot to recover a Linux VM after breaking a web server configuration.
+
+---
+
+## Lab Environment
+
+- Linux VM (Ubuntu 20.04+ recommended)
+- User with sudo privileges
+- Internet access
+
+---
+
+## Part 1: Install a Web Server (Apache)
+
+### Step 1: Update Packages
+
+```bash
+sudo apt update
+```
+
+### Step 2: Install Apache
+
+```bash
+sudo apt install apache2 -y
+```
+
+### Step 3: Start and Enable Apache
+
+```bash
+sudo systemctl start apache2
+sudo systemctl enable apache2
+```
+
+### Step 4: Verify Service Status
+
+```bash
+sudo systemctl status apache2
+```
+
+### Step 5: Test Web Server
+
+From the VM:
+
+```bash
+curl http://localhost
+```
+
+Or from a browser:
+
+```sh
+http://<VM-IP-address>
+```
+
+Expected result:
+Apache default page loads successfully.
+
+---
+
+## Part 2: Take a Snapshot
+
+### Snapshot Action (Hypervisor GUI)
+
+- Snapshot name: **Working Web Server**
+- Description: _Apache installed and running correctly_
+
+Snapshot Timing Diagram:
+
+```
+[ Clean OS ] ---> Install Apache ---> [ SNAPSHOT ] ---> Testing Zone
+```
+
+---
+
+## Part 3: Break the Web Server Configuration
+
+### Step 1: Edit Apache Configuration
+
+```bash
+sudo nano /etc/apache2/ports.conf
+```
+
+### Step 2: Introduce an Error
+
+Change:
+
+```
+Listen 80
+```
+
+To:
+
+```
+Listen eighty
+```
+
+Save and exit.
+
+---
+
+### Step 3: Restart Apache
+
+```bash
+sudo systemctl restart apache2
+```
+
+### Step 4: Check Status
+
+```bash
+sudo systemctl status apache2
+```
+
+Expected result:
+
+- Service fails
+- Error messages appear
+- Website no longer loads
+
+This is an intentional failure.
+
+---
+
+## Part 4: Revert to Snapshot
+
+### Snapshot Revert Process
+
+1. Power off VM (if required)
+2. Revert to **Working Web Server**
+3. Power on VM
+
+---
+
+### Step 5: Verify Recovery
+
+```bash
+sudo systemctl status apache2
+curl http://localhost
+```
+
+Expected result:
+
+- Apache runs normally
+- Configuration error is gone
+- Default page loads again
+
+Time-travel successful.
+
+---
+
+## 7. What Changed After Revert? (Concept Diagram)
+
+```
+Broken VM State
+----------------
+Apache ❌
+Config ❌
+
+Revert Snapshot
+       |
+       v
+
+Snapshot State
+---------------
+Apache ✅
+Config ✅
+```
+
+All changes made after the snapshot vanished.
+
+---
+
+## 8. Snapshot Pitfalls (Visual Warning)
+
+```
+Too Many Snapshots
+------------------
+Base Disk
+   |
+   +-- S1
+        |
+        +-- S2
+             |
+             +-- S3
+                  |
+                  +-- S4  ⚠️ Performance drops
+```
+
+---
+
+## Best Practices Checklist
+
+✔ Take snapshots before risky changes
+✔ Use clear names and descriptions
+✔ Delete snapshots when done
+✘ Do not keep snapshots long-term
+✘ Do not use snapshots as backups
+
+---
+
+## Session Wrap-Up
+
+Snapshots give virtual machines a rewind button, but they are not a reset button for everything. They preserve state, not independence. In this session, learners used snapshots to recover from failure, explored snapshot trees, and saw why cleanup matters.
+
+Today’s key idea:
+
+> **Snapshots protect moments. Clones and templates create futures.**
+
+This sets the stage perfectly for the next class.
+
+---
+
+## Reflection & Further Research 🧭
+
+### Reflection Questions
+
+1. If snapshots depend on the original VM disk, what happens if that disk is deleted?
+2. Why do hypervisors warn administrators about long-lived snapshots?
+3. In what scenarios would reverting to a snapshot be dangerous rather than helpful?
+4. How does snapshot usage differ between test environments and production systems?
+
+---
+
+### Further Research Topics
+
+Learners may explore one or more of the following:
+
+- Difference between **full clone** and **linked clone**
+- How snapshot delta disks affect I/O performance
+- Snapshot handling in different hypervisors (VirtualBox, VMware, Hyper-V)
+- Why enterprise environments limit snapshot retention
+- Relationship between snapshots, clones, and templates
+
+---
+
+## Concept Bridge to Next Session
+
+### From Snapshots to Cloning
+
+```
+Snapshot
+---------
+One VM
+One Timeline
+Rollback-focused
+
+Clone / Template
+----------------
+Multiple VMs
+Independent Lifecycles
+Scale-focused
+```
+
+Snapshots look backward.
+Clones and templates look forward.

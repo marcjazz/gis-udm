@@ -1,0 +1,73 @@
+# Scripting Labs
+
+## **Exercise 1: Shell Script for Detecting and Removing Duplicate Files**
+
+**Objective:**
+
+Write a shell script that compares the content of files in a specified directory to identify duplicates and optionally removes them.
+
+---
+
+### **Requirements**
+
+1. **Input**:
+   - The script should accept a directory path as an argument.
+   - Example:
+
+```bash
+./check-duplicates.sh /path/to/directory
+```
+
+2. **Output**:
+   - The script should list all files in the directory with a column indicating whether they are duplicates. For duplicates, it should specify the file they match.
+   - Example:
+
+```text
+    File                | Duplicate
+    --------------------------------
+    file1.txt           | No
+    file2.txt           | Yes
+    file3.txt           | Yes (file2.txt)
+```
+
+3. **Optional Flag**:
+   - Add a `-fix` flag to remove duplicate files. Only one copy of each duplicate file should be kept.
+   - Example:
+
+```bash
+./check-duplicates.sh /path/to/directory --fix
+# Deleting duplicate: file3.txt
+```
+
+4. **Implementation Details**:
+   - Compare files based on their content. Use tools like `md5sum` or `sha256sum` to generate file hashes for comparison.
+   - Ensure the script handles different file sizes efficiently.
+5. **Edge Cases**:
+   - Handle empty directories gracefully.
+   - Display error messages for invalid directories or insufficient permissions.
+
+---
+
+### **Evaluation Criteria**
+
+1. **Correctness**:
+   - Does the script accurately identify duplicates?
+   - Does it correctly delete duplicates when `-fix` is provided?
+2. **Code Quality**:
+   - Is the script modular and easy to read?
+   - Does it make effective use of shell utilities (e.g., `find`, `awk`, `sort`)?
+3. **Error Handling**:
+   - Are invalid inputs handled gracefully?
+   - Are meaningful error messages displayed?
+4. **Efficiency**:
+   - Does the script process large directories effectively without excessive resource usage?
+
+---
+
+### **Hints and Tips**
+
+- Use `find` to list files recursively in the directory.
+- Use `md5sum` or `sha256sum` to calculate file hashes for comparison.
+- Store hashes and file paths in a temporary file or an associative array for processing.
+- Use `awk` or `sed` for formatting the output.
+- Test your script with different types of files and directory structures.
