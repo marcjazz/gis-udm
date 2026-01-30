@@ -25,7 +25,7 @@ theme:
     - navigation.expand
   show_title: false
   show_stargazers: false
-  icon: heroicons:rocket-launch
+  icon: assets/logo.svg
   topbar_sections: true
   show_datetime: true
 

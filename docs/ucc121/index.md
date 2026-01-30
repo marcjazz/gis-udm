@@ -4,5 +4,5 @@ This module covers the use of scripting to automate administrative tasks.
 
 ## Sections
 
-- [Scripting](./scripting/)
-- [AI in Administration](./ai_in_admin/)
+- [Scripting](scripting/index.md)
+- [AI in Administration](ai_in_admin/index.md)

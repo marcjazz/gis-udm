@@ -4,4 +4,4 @@ This module covers virtualization fundamentals.
 
 ## Sections
 
-- UCC141-1: [Virtualization Fundamentals](./virtualization_fundamentals/)
+- UCC141-1: [Virtualization Fundamentals](virtualization_fundamentals/index.md)
