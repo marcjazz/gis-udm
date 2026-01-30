@@ -5,7 +5,6 @@
 - **Purpose**: To provide the essential basics for installing, managing startup, and maintaining software on Linux systems, which are fundamental skills for working on servers and in cloud environments.
 - **Target audience**: Students in Cloud Computing.
 - **Type of access**: Open.
-- **Hours**: 12
 - **Teaching mode**: Synchronous and Asynchronous.
 - **prerequisites**: None
 

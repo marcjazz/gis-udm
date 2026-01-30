@@ -106,7 +106,8 @@ The File System Table (`/etc/fstab`) determines how disk partitions, remote stor
 
 #### Anatomy of an `fstab` entry
 
-```text
+```bash
+# <file system>  <mount point>  <type>  <options>  <dump>  <pass>
 UUID=a1b2c3d4...  /var/log  ext4  defaults,noatime  0  2
 (1)               (2)       (3)   (4)               (5)(6)
 ```

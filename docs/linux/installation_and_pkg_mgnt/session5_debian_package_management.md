@@ -41,14 +41,14 @@ In this state, `awesome-app` is installed but "broken" because its dependencies 
 
 ### Core Commands
 
-| Command                | Description                                                       |
+| Command                | Description                                                       |  Example                                            |
 | :--------------------- | :---------------------------------------------------------------- | --------------------------------------------------- |
-| `sudo dpkg -i pkg.deb` | **Install** a local `.deb` file.                                  |
-| `sudo dpkg -r pkg`     | **Remove** a package (leaves configuration files).                |
-| `sudo dpkg -P pkg`     | **Purge** a package (removes everything, including config files). |
+| `sudo dpkg -i pkg.deb` | **Install** a local `.deb` file.                                  |                                                     |
+| `sudo dpkg -r pkg`     | **Remove** a package (leaves configuration files).                |                                                     |
+| `sudo dpkg -P pkg`     | **Purge** a package (removes everything, including config files). |                                                     |
 | `dpkg -l               | grep nginx`                                                       | **List** installed packages and filter for "nginx". |
-| `dpkg -S /bin/ls`      | **Search** which package "owns" or installed the file `/bin/ls`.  |
-| `dpkg -L nginx`        | **List files** installed by the `nginx` package.                  |
+| `dpkg -S /bin/ls`      | **Search** which package "owns" or installed the file `/bin/ls`.  |                                                     |
+| `dpkg -L nginx`        | **List files** installed by the `nginx` package.                  |                                                     |
 
 ---
 

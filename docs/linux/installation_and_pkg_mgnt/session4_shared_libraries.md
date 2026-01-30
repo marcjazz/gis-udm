@@ -77,7 +77,7 @@ The `ldd` command is your first line of defense when a program fails to start. I
 
 **Example output:**
 
-```text
+```bash
 $ ldd /usr/bin/ls
     linux-vdso.so.1 (0x00007ffca7fe4000)
     libselinux.so.1 => /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007f3e1b01a000)

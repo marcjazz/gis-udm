@@ -24,7 +24,7 @@ To demystify the layers, think of LVM like building with bricks:
 
 The flow of data storage in LVM looks like this:
 
-```text
+```
 Physical Disks  --->  Physical Volumes (PV)  --->  Volume Group (VG)  --->  Logical Volumes (LV)  --->  Filesystem
 (e.g., /dev/sdb)      (pvcreate /dev/sdb)          (Storage Pool)           (lvcreate)                  (mkfs.ext4)
 ```

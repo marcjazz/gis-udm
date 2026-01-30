@@ -16,7 +16,7 @@ The Secure Shell (SSH) is the primary gateway to your server. Securing it is non
 
 **Recommended Configuration (`/etc/ssh/sshd_config`):**
 
-```ssh
+```bash
 # /etc/ssh/sshd_config snippets
 
 # 1. Disable root login via SSH

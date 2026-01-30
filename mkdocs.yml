@@ -54,7 +54,9 @@ nav:
           - 'Functions': 'linux/shell_scripting/session6_functions_and_modularity.md'
           - 'SQL Intro': 'linux/shell_scripting/session7_introduction_to_data_management_with_sql.md'
           - 'Process Automation': 'linux/shell_scripting/session8_process_management_and_automation.md'
+      
       - 'AI Admin': 'linux/ai_in_admin/index.md'
+      
       - 'Labs':
           - 'Phoenix Server': 'linux/labs/phoenix_server.md'
           - 'Shell Scripting': 'linux/labs/shell_scripting.md'

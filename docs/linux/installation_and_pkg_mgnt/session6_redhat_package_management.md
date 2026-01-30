@@ -78,7 +78,7 @@ Repository information is stored in files ending in `.repo` within the `/etc/yum
 
 ### Anatomy of a `.repo` File
 
-```ini
+```toml
 [baseos]
 name=Red Hat Enterprise Linux $releasever - BaseOS
 baseurl=http://mirror.example.com/rhel/$releasever/BaseOS/$basearch/os/
