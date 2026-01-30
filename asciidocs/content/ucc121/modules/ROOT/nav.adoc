@@ -1,0 +1,9 @@
+* Shell Scripting
+** xref:scripting/index.adoc[Overview]
+** xref:scripting/session1.adoc[Mastering the Shell Environment]
+*** xref:scripting/session1_slides.adoc[Slides]
+** xref:scripting/session2.adoc[Introduction to Scripting]
+*** xref:scripting/session2_slides.adoc[Slides]
+* xref:ai_in_admin/index.adoc[AI in Administration]
+* Labs
+** xref:labs/scripting_lab1.adoc[Lab 1 - Duplicate Files]

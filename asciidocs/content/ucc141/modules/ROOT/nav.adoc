@@ -1,0 +1,12 @@
+* Virtualization Fundamentals
+** xref:virtualization_fundamentals/index.adoc[Overview]
+** xref:virtualization_fundamentals/session2.adoc[Hypervisors Deep Dive]
+*** xref:virtualization_fundamentals/session2_slides.adoc[Slides]
+** xref:virtualization_fundamentals/session3.adoc[Creating Your First VM]
+*** xref:virtualization_fundamentals/session3_slides.adoc[Slides]
+** xref:virtualization_fundamentals/session4.adoc[VM Hardware and Configuration]
+*** xref:virtualization_fundamentals/session4_slides.adoc[Slides]
+** xref:virtualization_fundamentals/session5.adoc[Virtual Network Modes]
+*** xref:virtualization_fundamentals/session5_slides.adoc[Slides]
+** xref:virtualization_fundamentals/session6.adoc[Snapshots]
+*** xref:virtualization_fundamentals/session6_slides.adoc[Slides]

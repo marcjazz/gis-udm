@@ -1,0 +1,12 @@
+:root {
+  --brand-primary: #007acc; /* A nice blue */
+  --brand-secondary: #ff9900; /* A complementary orange */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-container {
+    background-color: var(--brand-primary);
+}

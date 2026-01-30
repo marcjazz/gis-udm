@@ -1,0 +1,5 @@
+* xref:installation_and_pkg_mgnt/index.adoc[Linux Installation and Package Management]
+* xref:labs/lab1.adoc[Lab 1 - The Phoenix Server]
+* Slides
+** xref:labs/lab1_slides.adoc[Lab 1 Slides]
+** xref:disk_design_slides.adoc[Disk Design Slides]

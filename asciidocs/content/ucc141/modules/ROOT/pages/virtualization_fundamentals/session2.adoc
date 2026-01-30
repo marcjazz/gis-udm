@@ -1,0 +1,80 @@
+= UCC141-1, Session 2: Course Content
+
+== Topic: Hypervisors Deep Dive
+
+---
+
+=== 1. Understanding the Hypervisor
+
+The **hypervisor**, also known as the **Virtual Machine Monitor (VMM)**, is the critical layer of software that makes virtualization possible.
+
+* **Role:** It sits between the physical hardware and the virtual machines.
+* **Function:** It creates a virtualization layer that abstracts the physical hardware resources (CPU, Memory, Storage) and distributes them to the VMs.
+* **Isolation:** It ensures that VMs are isolated from each other and from the host system, so a crash in one VM does not affect others.
+
+=== 2. Type 1 Hypervisors (Bare-Metal)
+
+Type 1 hypervisors are installed **directly on the physical server's hardware**. There is no underlying operating system required to run them.
+
+* **Structure:** Hardware -> Hypervisor -> Virtual Machines.
+* **Performance:** High. They have direct access to hardware and act as their own operating system, managing and scheduling resources directly.
+* **Use Case:** Enterprise data centers, cloud infrastructure (AWS, Azure), large-scale server consolidation.
+* **Examples:**
+** VMware ESXi
+** Microsoft Hyper-V (Server)
+** Xen
+** KVM (Kernel-based Virtual Machine) - *Note: KVM turns the Linux kernel itself into a Type 1 hypervisor.*
+
+=== 3. Type 2 Hypervisors (Hosted)
+
+Type 2 hypervisors run as an **application** on top of a conventional operating system (the **Host OS**).
+
+* **Structure:** Hardware -> Host OS -> Hypervisor App -> Virtual Machines.
+* **Performance:** Lower than Type 1. The hypervisor does not have direct hardware access. All hardware requests, including CPU and memory access, must be passed to the Host OS's scheduler first. This extra layer of translation adds overhead and latency.
+* **Use Case:** Desktop virtualization, development/testing environments, running a second OS on your laptop.
+* **Examples:**
+** Oracle VirtualBox
+** VMware Workstation Pro / Player
+** Parallels Desktop (for Mac)
+
+=== 4. CPU Architecture: A Critical Foundation
+
+Virtualization is not magic; it relies on the host CPU's architecture. The guest operating system's architecture must be compatible with the host's.
+
+* **x86-64 (or amd64):** The dominant architecture for modern desktops, laptops, and servers. You can virtualize 64-bit (x86-64) and 32-bit (x86) operating systems on a standard 64-bit computer.
+* **ARM:** The architecture for most mobile devices and Apple Silicon Macs. You cannot directly virtualize an x86 OS on an ARM host. This requires **emulation**, a much slower process where every CPU instruction is translated in software.
+* **Key Takeaway:** Virtualization shares hardware. Emulation fakes it.
+
+=== 5. Comparison: Type 1 vs. Type 2
+
+[cols="1,1,1", options="header"]
+|===
+| Feature | Type 1 (Bare-Metal) | Type 2 (Hosted)
+| **Hardware Access** | Direct | Indirect (via Host OS)
+| **Performance** | Native / High | Slower (due to OS overhead)
+| **Scalability** | High | Low to Medium
+| **Management** | Often remote (web console/CLI) | Local GUI Application
+| **Typical User** | IT Administrator | Developer / End User
+|===
+
+=== 6. Introduction to VirtualBox
+
+For this course, we will use **Oracle VM VirtualBox**, a popular open-source Type 2 hypervisor.
+
+* **Cross-Platform:** Runs on Windows, Linux, and macOS hosts.
+* **Key Components:**
+** **VirtualBox Manager:** The GUI for creating and managing VMs.
+** **VBoxManage:** A powerful CLI tool for advanced management.
+** **Extension Pack:** Adds features like USB 2.0/3.0 support, VRDP (Virtual Remote Desktop Protocol), and other advanced capabilities.
+
+=== 7. Lab Exercises (TP/CC)
+
+. **Installation:**
+** Download and install VirtualBox on your workstation.
+** *Optional but Recommended:* Install the VirtualBox Extension Pack.
+. **Explore Global Preferences:**
+** Open VirtualBox and go to `File > Preferences`.
+** Check the **Default Machine Folder**. Ensure this drive has plenty of free space.
+. **Network Host Manager:**
+** Go to `File > Tools > Network Manager`.
+** Observe any "Host-Only Ethernet Adapters" listed. We will use these in future sessions.

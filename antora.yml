@@ -1,0 +1,25 @@
+site:
+  title: GIS-UDM Documentation
+  url: https://learn.kdmarc.xyz
+  start_page: navigation::index.adoc
+
+content:
+  sources:
+    - url: .
+      start_path: asciidocs/content/navigation
+    - url: .
+      start_path: asciidocs/content/ucc111
+    - url: .
+      start_path: asciidocs/content/ucc121
+    - url: .
+      start_path: asciidocs/content/ucc141
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/docs.antora.org/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+  supplemental_files: ./supplemental-ui
+
+asciidoc:
+  attributes:
+    experimental: ''
+    page-pagination: ''

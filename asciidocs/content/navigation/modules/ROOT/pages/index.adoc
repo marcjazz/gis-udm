@@ -1,0 +1,30 @@
+= Welcome to the GIS-UDM Course Hub
+
+This site contains all the course plans, labs, and materials for the Professional Bachelor's Degree in Cloud Computing at the UNIVERSITY OF THE MOUNTAINS (UdM).
+
+== Available Courses
+
+[INFO]
+====
+.UCC111 - Linux Foundational
+Covers the fundamentals of Linux installation, disk management, and package management.
+xref:ucc111:index.adoc[Go to course]
+====
+
+[INFO]
+====
+.UCC121 - Linux Expert
+A two-part course covering advanced shell scripting and the use of AI in system administration.
+xref:ucc121:index.adoc[Go to course]
+====
+
+[INFO]
+====
+.UCC141 - Virtualization Fundamentals
+Covers virtualization fundamentals.
+xref:ucc141:index.adoc[Go to course]
+====
+
+== About This Site
+
+This site is built with Antora. It is automatically deployed via GitHub Actions.
