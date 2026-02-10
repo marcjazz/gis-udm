@@ -40,3 +40,24 @@ Don't worry if you get stuck! Here are some general tips to help you navigate th
 - **Persistence Pays Off:** Some challenges might require a bit of investigation, but the solution is always within reach!
 
 Good luck, and have fun mastering the shell!
+
+## 📤 Submission Instructions
+
+Signal yourself during the shell scripting course sessions. 10 min shall be given to you for you to reproduce the game live.
+
+### Grading System
+
+**Level Points:**
+
+- **Session 1:** 5 points per level reached.
+- **Session 2:** 4 points per level reached.
+- **Session 3:** 3 points per level reached.
+
+**Time Bonus:**
+
+- **Session 1:** +1 point if completed level 4 within 5 minutes.
+- **Session 2:** +2 points if completed level 4 within 3 minutes.
+- **Session 3:** +3 points if completed level 4 within 1 minute.
+
+- Max sessions: 3
+- Max level: 4

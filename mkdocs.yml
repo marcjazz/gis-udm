@@ -58,10 +58,10 @@ nav:
       - "AI Admin": "linux/ai_in_admin/index.md"
 
       - "Labs":
+          - "Vagrant Lab": "linux/labs/vagrant_lab.md"
           - "Phoenix Server": "linux/labs/phoenix_server.md"
           - "Shell Scripting": "linux/labs/shell_scripting.md"
           - "ShellOps Arena": "linux/labs/shellops_arena.md"
-          - "Vagrant Lab": "linux/labs/vagrant_lab.md"
   - "Virtualization":
       - "Virtualization": "virtualization/index.md"
       - "Virtualization Fundamentals":
@@ -74,6 +74,8 @@ nav:
           - "Snapshots": "virtualization/virtualization_fundamentals/session6_snapshots_for_state_management.md"
           - "Cloning": "virtualization/virtualization_fundamentals/session7_cloning_and_templates.md"
           - "Automation": "virtualization/virtualization_fundamentals/session8_automation_and_portability.md"
+      - "Labs":
+          - "Vagrant Lab": "virtualization/labs/vagrant_lab.md"
 
 # Extensions
 markdown_extensions:
