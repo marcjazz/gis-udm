@@ -1,4 +1,4 @@
-site_name: Learn With Marco 
+site_name: Learn With Marco
 site_url: https://learn.kdmarc.xyz
 repo_url: https://github.com/marcjazz/gis-udm
 
@@ -30,49 +30,50 @@ theme:
   show_datetime: true
 
 nav:
-  - 'Home': 'index.md'
-  - 'Linux':
-      - 'Linux': 'linux/index.md'
-      - 'Package Management': 
-          - 'Overview': 'linux/installation_and_pkg_mgnt/index.md'
-          - 'Ecosystem Intro': 'linux/installation_and_pkg_mgnt/session1_introduction_and_ecosystem.md'
-          - 'Disk Design': 'linux/installation_and_pkg_mgnt/session2_disk_design_and_filesystems.md'
-          - 'Boot Process': 'linux/installation_and_pkg_mgnt/session3_boot_process_and_grub2.md'
-          - 'Shared Libraries': 'linux/installation_and_pkg_mgnt/session4_shared_libraries.md'
-          - 'Debian/APT': 'linux/installation_and_pkg_mgnt/session5_debian_package_management.md'
-          - 'RedHat/DNF': 'linux/installation_and_pkg_mgnt/session6_redhat_package_management.md'
-          - 'LVM': 'linux/installation_and_pkg_mgnt/session7_lvm.md'
-          - 'Hardening': 'linux/installation_and_pkg_mgnt/session8_hardening_and_recovery.md'
-          
-      - 'Shell Scripting':
-          - 'Overview': 'linux/shell_scripting/index.md'
-          - 'Shell Environment': 'linux/shell_scripting/session1_mastering_the_shell_environment.md'
-          - 'Scripting Intro': 'linux/shell_scripting/session2_introduction_to_shell_scripting.md'
-          - 'Bash Basics': 'linux/shell_scripting/session3_bash_scripting_fundamentals.md'
-          - 'Control Structures': 'linux/shell_scripting/session4_logic_and_control_structures.md'
-          - 'Loops': 'linux/shell_scripting/session5_loops_and_iteration.md'
-          - 'Functions': 'linux/shell_scripting/session6_functions_and_modularity.md'
-          - 'SQL Intro': 'linux/shell_scripting/session7_introduction_to_data_management_with_sql.md'
-          - 'Process Automation': 'linux/shell_scripting/session8_process_management_and_automation.md'
-      
-      - 'AI Admin': 'linux/ai_in_admin/index.md'
-      
-      - 'Labs':
-          - 'Phoenix Server': 'linux/labs/phoenix_server.md'
-          - 'Shell Scripting': 'linux/labs/shell_scripting.md'
-  - 'Virtualization':
-      - 'Virtualization': 'virtualization/index.md'
-      - 'Virtualization Fundamentals':
-          - 'Overview': 'virtualization/virtualization_fundamentals/index.md'
-          - 'Virtualization Intro': 'virtualization/virtualization_fundamentals/session1_introduction_to_virtualization.md'
-          - 'Hypervisors': 'virtualization/virtualization_fundamentals/session2_hypervisors_deep_dive.md'
-          - 'First VM': 'virtualization/virtualization_fundamentals/session3_creating_your_first_vm.md'
-          - 'VM Hardware': 'virtualization/virtualization_fundamentals/session4_vm_hardware_and_configuration.md'
-          - 'Network Modes': 'virtualization/virtualization_fundamentals/session5_virtual_network_modes_in_hypervisors.md'
-          - 'Snapshots': 'virtualization/virtualization_fundamentals/session6_snapshots_for_state_management.md'
-          - 'Cloning': 'virtualization/virtualization_fundamentals/session7_cloning_and_templates.md'
-          - 'Automation': 'virtualization/virtualization_fundamentals/session8_automation_and_portability.md'
+  - "Home": "index.md"
+  - "Linux":
+      - "Linux": "linux/index.md"
+      - "Package Management":
+          - "Overview": "linux/installation_and_pkg_mgnt/index.md"
+          - "Ecosystem Intro": "linux/installation_and_pkg_mgnt/session1_introduction_and_ecosystem.md"
+          - "Disk Design": "linux/installation_and_pkg_mgnt/session2_disk_design_and_filesystems.md"
+          - "Boot Process": "linux/installation_and_pkg_mgnt/session3_boot_process_and_grub2.md"
+          - "Shared Libraries": "linux/installation_and_pkg_mgnt/session4_shared_libraries.md"
+          - "Debian/APT": "linux/installation_and_pkg_mgnt/session5_debian_package_management.md"
+          - "RedHat/DNF": "linux/installation_and_pkg_mgnt/session6_redhat_package_management.md"
+          - "LVM": "linux/installation_and_pkg_mgnt/session7_lvm.md"
+          - "Hardening": "linux/installation_and_pkg_mgnt/session8_hardening_and_recovery.md"
 
+      - "Shell Scripting":
+          - "Overview": "linux/shell_scripting/index.md"
+          - "Shell Environment": "linux/shell_scripting/session1_mastering_the_shell_environment.md"
+          - "Scripting Intro": "linux/shell_scripting/session2_introduction_to_shell_scripting.md"
+          - "Bash Basics": "linux/shell_scripting/session3_bash_scripting_fundamentals.md"
+          - "Control Structures": "linux/shell_scripting/session4_logic_and_control_structures.md"
+          - "Loops": "linux/shell_scripting/session5_loops_and_iteration.md"
+          - "Functions": "linux/shell_scripting/session6_functions_and_modularity.md"
+          - "SQL Intro": "linux/shell_scripting/session7_introduction_to_data_management_with_sql.md"
+          - "Process Automation": "linux/shell_scripting/session8_process_management_and_automation.md"
+
+      - "AI Admin": "linux/ai_in_admin/index.md"
+
+      - "Labs":
+          - "Phoenix Server": "linux/labs/phoenix_server.md"
+          - "Shell Scripting": "linux/labs/shell_scripting.md"
+          - "ShellOps Arena": "linux/labs/shellops_arena.md"
+          - "Vagrant Lab": "linux/labs/vagrant_lab.md"
+  - "Virtualization":
+      - "Virtualization": "virtualization/index.md"
+      - "Virtualization Fundamentals":
+          - "Overview": "virtualization/virtualization_fundamentals/index.md"
+          - "Virtualization Intro": "virtualization/virtualization_fundamentals/session1_introduction_to_virtualization.md"
+          - "Hypervisors": "virtualization/virtualization_fundamentals/session2_hypervisors_deep_dive.md"
+          - "First VM": "virtualization/virtualization_fundamentals/session3_creating_your_first_vm.md"
+          - "VM Hardware": "virtualization/virtualization_fundamentals/session4_vm_hardware_and_configuration.md"
+          - "Network Modes": "virtualization/virtualization_fundamentals/session5_virtual_network_modes_in_hypervisors.md"
+          - "Snapshots": "virtualization/virtualization_fundamentals/session6_snapshots_for_state_management.md"
+          - "Cloning": "virtualization/virtualization_fundamentals/session7_cloning_and_templates.md"
+          - "Automation": "virtualization/virtualization_fundamentals/session8_automation_and_portability.md"
 
 # Extensions
 markdown_extensions:
