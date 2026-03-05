@@ -58,11 +58,10 @@ nav:
       - "AI Admin": "linux/ai_in_admin/index.md"
 
       - "Labs":
-          - "Vagrant Lab": "linux/labs/vagrant_lab.md"
+          - "AI Admin Lab": "linux/labs/ai_in_admin.md"
           - "Phoenix Server": "linux/labs/phoenix_server.md"
           - "Shell Scripting": "linux/labs/shell_scripting.md"
           - "ShellOps Arena": "linux/labs/shellops_arena.md"
-          - "AI Admin Lab": "linux/labs/ai_admin_lab.md"
   - "Virtualization":
       - "Virtualization": "virtualization/index.md"
       - "Virtualization Fundamentals":
