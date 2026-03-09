@@ -59,6 +59,7 @@ nav:
 
       - "Labs":
           - "AI Admin Lab": "linux/labs/ai_in_admin.md"
+          - "AI Admin Lab 2": "linux/labs/ai_in_admin_lab2.md"
           - "Phoenix Server": "linux/labs/phoenix_server.md"
           - "Shell Scripting": "linux/labs/shell_scripting.md"
           - "ShellOps Arena": "linux/labs/shellops_arena.md"

@@ -16,7 +16,7 @@ However, **AI output must always be verified manually** before execution.
 
 ---
 
-# Lab Objectives
+## Lab Objectives
 
 By the end of this lab you will:
 
@@ -28,7 +28,7 @@ By the end of this lab you will:
 
 ---
 
-# Rules
+## Rules
 
 You may use an AI assistant to:
 
@@ -45,7 +45,7 @@ However:
 
 ---
 
-# Environment Assumptions
+## Environment Assumptions
 
 Assume the system contains:
 
@@ -63,7 +63,7 @@ Your scripts must run on a **standard Linux system**.
 
 ---
 
-# Part 1 – System Reconnaissance
+## Part 1 – System Reconnaissance
 
 Your first task is to **assess the state of the system**.
 
@@ -118,7 +118,7 @@ Explain the output in your report.
 
 ---
 
-# Part 2 – Security Investigation
+## Part 2 – Security Investigation
 
 Users suspect SSH brute-force attacks.
 
@@ -166,7 +166,7 @@ Explain any suspicious patterns.
 
 ---
 
-# Part 3 – AI-Assisted Script Development
+## Part 3 – AI-Assisted Script Development
 
 You will now build a **system diagnostic script**.
 
@@ -240,7 +240,7 @@ Report saved to diagnostic_report.log
 
 ---
 
-# Part 4 – Script Review Using AI
+## Part 4 – Script Review Using AI
 
 After writing your script:
 
@@ -264,7 +264,7 @@ Then:
 
 ---
 
-# Part 5 – Detect AI Mistakes
+## Part 5 – Detect AI Mistakes
 
 AI is not always correct.
 
@@ -279,7 +279,7 @@ Explain how you corrected them.
 
 ---
 
-# Bonus Challenge (Advanced)
+## Bonus Challenge (Advanced)
 
 Extend your script so that it also detects **world-writable files**.
 
@@ -298,7 +298,7 @@ But consider:
 
 ---
 
-# Deliverables
+## Deliverables
 
 Submit:
 
@@ -312,7 +312,7 @@ Submit:
 
 ---
 
-# Evaluation Criteria
+## Evaluation Criteria
 
 | Criteria               | Points |
 | ---------------------- | ------ |
@@ -326,7 +326,7 @@ Total: **100 points**
 
 ---
 
-# Final Reflection
+## Final Reflection
 
 Answer briefly:
 
