@@ -1,0 +1,103 @@
+Fiche de progression – Scripting Shell et gestion des données
+============================================================
+
+
+Objectifs détaillés par session :
+
+Session 1 : Maîtriser l’environnement Shell
+- Comprendre le rôle du shell et son interaction avec le système d’exploitation.
+- Personnaliser l’environnement avec .bashrc, alias, fonctions et variables d’environnement.
+- Créer et utiliser des alias et fonctions pour automatiser des tâches courantes.
+
+Session 2 : Introduction au scripting Shell
+- Expliquer la structure d’un script et l’importance du shebang.
+- Rendre un script exécutable et comprendre la gestion des permissions.
+- Écrire des scripts simples avec commentaires et bonnes pratiques.
+
+Session 3 : Fondamentaux du scripting Bash
+- Déclarer et manipuler des variables locales et d’environnement.
+- Lire l’entrée utilisateur et gérer les paramètres de script.
+- Utiliser la substitution de commandes pour capturer des résultats dynamiquement.
+
+Session 4 : Structures de contrôle et logique
+- Implémenter des conditions avec if/elif/else et case.
+- Utiliser les opérateurs de test pour fichiers, chaînes et nombres.
+- Contrôler le flux d’exécution avec les codes de sortie.
+
+Session 5 : Boucles et itérations
+- Utiliser les boucles for, while et until pour automatiser des tâches répétitives.
+- Traiter des fichiers ligne par ligne et manipuler des listes.
+- Appliquer les instructions break et continue pour gérer le flux dans les boucles.
+
+Session 6 : Fonctions et modularité
+- Définir et appeler des fonctions Bash avec arguments et valeurs de retour.
+- Gérer la portée des variables (local/global) dans les fonctions.
+- Modulariser les scripts en externalisant les fonctions.
+
+Session 7 : Introduction à la gestion de données avec SQL
+- Comprendre les principes des bases de données relationnelles.
+- Utiliser sqlite3 pour créer, interroger et modifier des tables.
+- Intégrer des requêtes SQL dans des scripts Bash pour automatiser la gestion de données.
+
+Session 8 : Gestion des processus et automatisation
+- Visualiser et gérer les processus Unix (ps, top, fg, bg, nohup).
+- Planifier des tâches récurrentes avec cron et comprendre la syntaxe crontab.
+- Assurer la fiabilité et la persistance des scripts automatisés.
+
+Plan détaillé de la leçon :
+
+Session 1 : Maîtriser l’environnement Shell
+	- What is a Shell?
+	- The .bashrc File: Your Personal Toolbox
+	- Aliases: Your Command-Line Shortcuts
+	- Environment Variables, PATH, PS1
+
+Session 2 : Introduction au scripting Shell
+	- The Anatomy of a Script
+	- The Shebang (`#!`)
+	- Comments et bonnes pratiques
+	- Permissions et exécution de scripts
+
+Session 3 : Fondamentaux du scripting Bash
+	- Variables et types de données
+	- Lecture de l’entrée utilisateur (read)
+	- Substitution de commandes
+	- Gestion des paramètres ($1, $@)
+
+Session 4 : Structures de contrôle et logique
+	- if/elif/else, case
+	- Opérateurs de test (fichiers, chaînes, nombres)
+	- Codes de sortie et gestion d’erreurs
+
+Session 5 : Boucles et itérations
+	- Boucles for, while, until
+	- Traitement de fichiers ligne par ligne
+	- break, continue
+
+Session 6 : Fonctions et modularité
+	- Définition et appel de fonctions
+	- Passage d’arguments, valeurs de retour
+	- Modularisation et externalisation
+
+Session 7 : Introduction à la gestion de données avec SQL
+	- Concepts de base des bases de données relationnelles
+	- Commandes SQL essentielles (CREATE, INSERT, SELECT, UPDATE, DELETE)
+	- Utilisation de sqlite3 en ligne de commande et dans les scripts
+
+Session 8 : Gestion des processus et automatisation
+	- Visualisation et gestion des processus (ps, top, fg, bg, nohup)
+	- Planification avec cron, syntaxe crontab
+	- Fiabilité et persistance des scripts automatisés
+
+Questions pour recueillir l’avis des étudiants :
+- Quelles commandes ou concepts vous ont semblé les plus difficiles à assimiler ?
+- Avez-vous réussi à automatiser une tâche réelle grâce au scripting ?
+- Quels aspects du scripting souhaitez-vous approfondir (fonctions, gestion d’erreurs, SQL…) ?
+- Les exemples de gestion de données vous paraissent-ils utiles pour vos projets ?
+- Souhaitez-vous explorer d’autres outils ou langages de scripting ?
+
+Observations / Feedback :
+- L'automatisation via les tâches planifiées (Cron) est un sujet d'intérêt majeur pour les étudiants.
+- L'intégration d'API dans les scripts est également très demandée pour étendre les capacités d'automatisation.
+- Les démonstrations de codage en direct (live coding) sont jugées très efficaces pour comprendre la logique du scripting.
+- Les étudiants apprécient le lien entre les concepts théoriques résumés et les exercices pratiques (TP).

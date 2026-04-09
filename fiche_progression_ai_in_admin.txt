@@ -1,0 +1,101 @@
+Fiche de progression – AI in Administrative Tasks
+===============================================
+
+
+Objectifs détaillés par session :
+
+Session 1 : Introduction à l’IA pour l’administration système
+- Comprendre le fonctionnement des LLMs et leur utilité pour les administrateurs Linux.
+- Identifier les limites, enjeux éthiques et bonnes pratiques d’utilisation de l’IA.
+- Installer et configurer un outil IA pour le CLI.
+
+Session 2 : Génération et explication de commandes
+- Formuler des prompts efficaces pour découvrir ou expliquer des commandes.
+- Comparer et valider la sécurité des commandes générées par l’IA.
+- Tester les suggestions IA dans un environnement sécurisé.
+
+Session 3 : Génération de scripts assistée par IA
+- Transformer des commandes IA en scripts complets et fonctionnels.
+- Intégrer la gestion des erreurs et la validation des entrées avec l’aide de l’IA.
+- Automatiser des tâches administratives courantes.
+
+Session 4 : Amélioration et débogage de scripts avec l’IA
+- Utiliser l’IA comme partenaire de programmation pour améliorer et commenter les scripts.
+- Déboguer et sécuriser les scripts proposés par l’IA.
+- Évaluer de façon critique les suggestions IA.
+
+Session 5 : Analyse de logs augmentée par l’IA
+- Utiliser l’IA pour analyser et résumer de grands fichiers de logs.
+- Détecter des anomalies et corréler des événements.
+- Générer des rapports automatisés à partir des analyses IA.
+
+Session 6 : Configuration et sécurité avec l’IA
+- Générer et auditer des fichiers de configuration système avec l’IA.
+- Identifier et corriger les failles de sécurité dans les configurations.
+- Vérifier les suggestions IA par des commandes de validation.
+
+Session 7 : Supervision prédictive et monitoring
+- Comprendre les concepts d’AIOps et de monitoring prédictif.
+- Collecter et analyser des métriques système avec l’IA.
+- Mettre en place des alertes et prédire des incidents à partir de données historiques.
+
+Session 8 : Projet de synthèse et perspectives
+- Combiner IA, scripts et analyses pour résoudre un cas complexe.
+- Présenter un rapport final et réfléchir à l’apport de l’IA dans l’administration système.
+- Explorer les outils émergents et les limites actuelles de l’IA pour les admins Linux.
+
+Plan détaillé de la leçon :
+
+Session 1 : Introduction à l’IA pour l’administration système
+	- Qu’est-ce qu’un LLM ? Exemples d’usages pour l’admin Linux
+	- Limites, éthique et sécurité
+	- Installation d’un outil IA pour le CLI
+
+Session 2 : Génération et explication de commandes
+	- Techniques de prompt pour la découverte et l’explication
+	- Comparaison et validation de commandes générées
+	- Sécurité et tests en environnement isolé
+
+Session 3 : Génération de scripts assistée par IA
+	- De la commande au script complet
+	- Gestion des erreurs et validation des entrées
+	- Automatisation de tâches courantes
+
+Session 4 : Amélioration et débogage de scripts
+	- Refactoring, commentaires et robustesse
+	- Débogage assisté par IA
+	- Évaluation critique des suggestions
+
+Session 5 : Analyse de logs augmentée
+	- Stratégies de résumé de logs (auth.log, syslog)
+	- Détection d’anomalies et génération de rapports
+	- Visualisation et export des résultats
+
+Session 6 : Configuration et sécurité
+	- Génération de configurations sécurisées (Nginx, SSH…)
+	- Audit et amélioration de fichiers existants
+	- Validation des configurations
+
+Session 7 : Supervision prédictive
+	- Collecte de métriques système (CPU, RAM, disque)
+	- Analyse prédictive et alertes
+	- Intégration avec outils de notification
+
+Session 8 : Projet de synthèse et perspectives
+	- Diagnostic intelligent combinant logs, monitoring et scripts
+	- Rapport final et présentation
+	- Limites et avenir de l’IA pour l’admin Linux
+
+Questions pour recueillir l’avis des étudiants :
+- Quelles tâches administratives avez-vous réussi à accélérer grâce à l’IA ?
+- Avez-vous rencontré des limites ou des erreurs dans les suggestions IA ?
+- Quels aspects de l’ingénierie de prompt vous semblent les plus utiles ?
+- Comment évaluez-vous la sécurité des commandes générées par l’IA ?
+- Souhaitez-vous approfondir certains cas d’usage ou outils IA ?
+
+Observations / Feedback :
+- Les étudiants apprécient particulièrement la configuration d'un LLM en local pour interagir avec les services système.
+- L'intégration d'API dans les scripts est un point d'intérêt majeur pour l'automatisation.
+- L'ingénierie de prompt est perçue comme un concept de base essentiel à maîtriser pour les activités quotidiennes.
+- L'utilisation de l'IA pour la résolution de problèmes et l'assistance au codage en direct est jugée très efficace.
+- Les guides de TP étape par étape (PDF/Markdown) et les prompts recommandés sont les ressources les plus utiles.

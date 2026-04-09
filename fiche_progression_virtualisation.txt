@@ -1,0 +1,134 @@
+Fiche de progression – Fondamentaux de la virtualisation
+========================================================
+
+Objectifs de la Leçon :
+Session 1 : Introduction à la virtualisation
+- Expliquer le concept de virtualisation et ses avantages pour l’informatique moderne.
+- Identifier les principaux cas d’usage de la virtualisation (consolidation, isolation, portabilité).
+- Retracer l’évolution historique des technologies de virtualisation.
+
+Session 2 : Hyperviseurs (Type 1 et Type 2)
+- Distinguer les différences entre hyperviseurs de type 1 (bare-metal) et type 2 (hosted).
+- Installer et configurer un hyperviseur de type 2 (VirtualBox).
+- Explorer les paramètres globaux et comprendre leur impact sur l’environnement virtuel.
+
+Session 3 : Création d’une machine virtuelle
+- Créer une nouvelle VM en allouant CPU, RAM et disque virtuel.
+- Monter une image ISO et installer un système d’exploitation invité.
+- Comprendre le processus d’initialisation d’une VM.
+
+Session 4 : Matériel et configuration avancée
+- Modifier les paramètres matériels d’une VM (RAM, CPU, disques).
+- Comprendre les différents formats de disques virtuels (VDI, VMDK, QCOW2).
+- Ajuster les ressources pour optimiser les performances de la VM.
+
+Session 5 : Réseautage virtuel
+- Expliquer les modes de réseau virtuel (NAT, Bridge, Host-Only, Internal).
+- Configurer et tester la connectivité réseau entre VMs et avec l’hôte.
+- Choisir le mode réseau adapté à différents scénarios d’usage.
+
+Session 6 : Gestion des snapshots
+- Créer, restaurer et supprimer des snapshots pour gérer l’état d’une VM.
+- Comprendre l’arbre de snapshots et ses implications sur le stockage.
+- Utiliser les snapshots pour tester et revenir à des états antérieurs.
+
+Session 7 : Clonage et templates
+- Créer des clones complets et liés à partir d’une VM maître.
+- Comprendre la différence entre clone complet et clone lié (usage, stockage).
+- Utiliser des templates pour déployer rapidement des environnements standardisés.
+
+Session 8 : Automatisation et portabilité
+- Automatiser le déploiement de VM avec Vagrant et comprendre le Vagrantfile.
+- Importer et exporter des VM au format OVF pour la portabilité.
+- Découvrir les avantages de l’automatisation dans la gestion d’environnements virtualisés.
+
+
+Plan détaillé de la Leçon :
+
+Session 1 : Introduction à la virtualisation
+	- Overview
+	- What is Virtualization?
+	- Host vs. Guest
+	- Benefits of Virtualization (Server Consolidation, Isolation, Portability, Rapid Provisioning)
+	- Use Cases (Dev/Test, Migration, Cloud)
+	- A Brief History (Mainframes to VT-x/AMD-V)
+	- Advanced Concept: Full Hardware Emulation vs. Hardware-Assisted Virtualization
+	- Lab/Assessment: Comparer des solutions de virtualisation
+
+Session 2 : Hyperviseurs (Type 1 et Type 2)
+	- Topic: Hypervisors Deep Dive
+	- Understanding the Hypervisor (VMM)
+	- Type 1 Hypervisors (Bare-Metal)
+	- Type 2 Hypervisors (Hosted)
+	- CPU Architecture: A Critical Foundation (x86-64, ARM, Nested Virtualization)
+	- Comparison: Type 1 vs. Type 2
+	- Introduction to VirtualBox
+	- Lab Exercises: Installation, Préférences globales, Network Host Manager
+
+Session 3 : Création d’une machine virtuelle
+	- Step-by-step VM Creation Wizard
+	- Allocating Virtual Hardware (CPU, RAM)
+	- Creating and Attaching Virtual Hard Disk
+	- Mounting ISO Image for OS Installation
+	- Lab/Assessment: Créer une VM et installer Linux
+
+Session 4 : Matériel et configuration avancée
+	- Modifying VM Settings
+	- Virtual Disk Formats (VDI, VMDK, QCOW2)
+	- Fixed vs. Dynamically Allocated Disks
+	- Adding/Resizing Hardware (RAM, CPU, Disks)
+	- Lab/Assessment: Ajouter un disque, ajuster RAM/CPU
+
+Session 5 : Réseautage virtuel
+	- Exploring Virtual Network Modes: NAT, Bridged, Host-Only, Internal
+	- Use Cases for Each Mode
+	- Configuring and Verifying Connectivity
+	- Lab/Assessment: Configurer deux VMs en modes réseau différents
+
+Session 6 : Gestion des snapshots
+	- What Is a Snapshot? (With Diagram)
+	- Snapshot Tree Explained (Visual)
+	- Snapshot vs Backup (Comparison Table)
+	- When to Use Snapshots (Use Cases)
+	- Advanced Snapshot Topics
+	- Practical Lab: Snapshot Recovery with a Web Server
+	- Lab Environment
+	- Part 1: Install a Web Server (Apache)
+	- Part 2: Take a Snapshot
+	- Part 3: Break the Web Server Configuration
+	- Part 4: Revert to Snapshot
+	- Advanced Lab: Analyzing Delta Disks
+	- Best Practices Checklist
+
+Session 7 : Clonage et templates
+	- Why Clone Virtual Machines?
+	- What Is Being Cloned?
+	- Clone Types Overview
+	- Full vs. Linked Clone Comparison
+	- Full Clone: Pros and Cons
+	- Linked Clone: Pros and Cons
+	- Storage Comparison Example
+	- Using a Master VM as Template
+	- Lab/Assessment: Créer un master, un full clone, un linked clone
+
+Session 8 : Automatisation et portabilité
+	- Overview
+	- Advanced Topic: Infrastructure as Code (IaC) with Vagrant
+	- Less Common Use Case: Nested Virtualization in Automation
+	- Portability: OVF vs. OVA Deep Dive
+	- Lab/Assessment: Utiliser Vagrant pour déployer une VM
+	- Advanced Topic References
+
+Questions pour recueillir l’avis des étudiants :
+- Quels concepts de virtualisation vous semblent les plus utiles ou innovants ?
+- Avez-vous rencontré des difficultés lors de la création ou configuration de VM ?
+- Quel mode de réseau virtuel avez-vous préféré et pourquoi ?
+- Voyez-vous des applications concrètes de la virtualisation dans vos projets ou stages ?
+- Les fonctionnalités de snapshot, clonage ou automatisation vous paraissent-elles utiles ?
+- Quels aspects souhaitez-vous approfondir (performance, sécurité, automatisation…) ?
+
+Observations / Feedback :
+- La création et l'utilisation de VM sont perçues comme une compétence clé pour ceux n'ayant utilisé que Docker précédemment.
+- Le processus de configuration et de destruction de VM donne aux étudiants une expérience concrète proche du travail d'ingénieur en sécurité.
+- Les outils (VMs, Lab environments) sont jugés très efficaces pour créer une expérience d'apprentissage pratique (hands-on).
+- Les guides de TP étape par étape (PDF/Markdown) sont essentiels pour structurer l'apprentissage.
