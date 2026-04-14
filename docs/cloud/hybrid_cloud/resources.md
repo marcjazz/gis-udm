@@ -1,0 +1,3 @@
+- <https://docs.cloud.google.com/architecture/hybrid-multicloud>
+- <https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-hybrid-cloud-computing>
+- <https://www.networkdr.com/cloud-computing/insights-what-is-hybrid-cloud-how-it-works/>
