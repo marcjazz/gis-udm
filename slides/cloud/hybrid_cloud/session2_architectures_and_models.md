@@ -157,7 +157,27 @@ _Speed of light vs. Chatty applications._
 
 _Data is heavy and pulls applications toward it._
 
-**[Placeholder for Image: A visual metaphor for Data Gravity. Show a massive, glowing, dense sphere of digital data (zeros and ones) resting on a grid that is warping under its weight, like spacetime around a planet. Smaller, sleek icons representing 'Applications' and 'Analytics Engines' are being visibly pulled into orbit around the massive data sphere. The background should be dark, conveying a sense of vast digital space.]**
+```mermaid
+graph TB
+    subgraph Space ["Digital Space"]
+        direction TB
+        MassiveData(("<br/><b>MASSIVE DATA SPHERE</b><br/>(1010110101)<br/><br/>"))
+        
+        App1[Application A]
+        App2[Application B]
+        Analytics[Analytics Engine]
+        
+        App1 -- "Pulled into Orbit" --> MassiveData
+        App2 -- "Pulled into Orbit" --> MassiveData
+        Analytics -- "Pulled into Orbit" --> MassiveData
+    end
+    
+    style Space fill:#0a0a1a,stroke:#333,color:#fff
+    style MassiveData fill:#4d4dff,stroke:#fff,stroke-width:4px,color:#fff,font-size:16px
+    style App1 fill:#222,stroke:#0ff,color:#0ff
+    style App2 fill:#222,stroke:#0ff,color:#0ff
+    style Analytics fill:#222,stroke:#f0f,color:#f0f
+```
 
 **The Challenge:**
 
@@ -175,7 +195,29 @@ _Data is heavy and pulls applications toward it._
 
 _Managing the definitive truth of data across locations._
 
-**[Placeholder for Image: A conceptual diagram illustrating Data Consistency across a Hybrid Cloud. Show two databases, one labeled 'Cloud' and one 'On-Premises', separated by distance. Between them, draw a glowing, bi-directional energy stream representing 'Replication'. Above them, show a set of scales balanced perfectly, holding an 'Availability' icon on one side and a 'Consistency' icon on the other. The image should convey the delicate balance required in distributed data management.]**
+```mermaid
+graph LR
+    subgraph Balance ["CAP Theorem Balance"]
+        direction TB
+        Scale((Balance))
+        Availability[Availability]
+        Consistency[Consistency]
+        Scale --- Availability
+        Scale --- Consistency
+    end
+
+    subgraph Locations ["Hybrid Cloud Environments"]
+        direction LR
+        DB_OnPrem[(On-Premises DB)]
+        DB_Cloud[(Cloud DB)]
+        
+        DB_OnPrem <== "Replication Stream" ==> DB_Cloud
+    end
+    
+    style Scale fill:#f1c40f,stroke:#333
+    style DB_OnPrem fill:#27ae60,stroke:#fff,color:#fff
+    style DB_Cloud fill:#2980b9,stroke:#fff,color:#fff
+```
 
 **The Challenge:**
 
@@ -199,7 +241,36 @@ _Managing the definitive truth of data across locations._
 **Scenario:** "SecureBank" Challenge
 Design an architecture for real-time, ML-driven fraud scoring using Vertex AI.
 
-**[Placeholder for Image: A comprehensive technical diagram illustrating a Tiered Hybrid Cloud architecture for a banking fraud detection system. On the left side ('On-Premises'), show a 'Core Banking Mainframe' and a 'Tokenization/Anonymization Gateway' glowing with secure green indicators. On the right side ('Public Cloud'), show an 'AI/ML Processing Engine' (Vertex AI) with futuristic blue glowing neural network nodes. Connect the two with a thick, fast-moving, glowing data pipeline labeled 'Dedicated Low-Latency Interconnect'. Inside the pipeline, depict data packets stripped of personal identities. The style should be professional, isometric 3D, suitable for enterprise IT documentation.]**
+```mermaid
+graph LR
+    subgraph OnPrem ["On-Premises (Secure)"]
+        direction TB
+        Mainframe[Core Banking Mainframe]
+        Gateway[Tokenization Gateway]
+        
+        Mainframe --> Gateway
+    end
+
+    subgraph Interconnect ["Dedicated Interconnect"]
+        Pipeline{{"Anonymized Data Pipeline"}}
+    end
+
+    subgraph Cloud ["Public Cloud"]
+        direction TB
+        VertexAI[Vertex AI ML Engine]
+        FraudScore[Fraud Score API]
+        
+        VertexAI --> FraudScore
+    end
+
+    Gateway ==> Pipeline ==> VertexAI
+    
+    style OnPrem fill:#1a3a1a,stroke:#2ecc71,color:#fff
+    style Cloud fill:#1a1a3a,stroke:#3498db,color:#fff
+    style Mainframe fill:#2ecc71,stroke:#fff,color:#000
+    style VertexAI fill:#3498db,stroke:#fff,color:#000
+    style Pipeline fill:#f39c12,stroke:#fff,color:#000
+```
 
 ---
 
