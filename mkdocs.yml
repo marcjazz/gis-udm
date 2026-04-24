@@ -98,6 +98,7 @@ nav:
           - "Labs":
                 - "Vagrant Lab": "virtualization/labs/vagrant_lab.md"
     - "Cloud":
+          - "Cloud": "cloud/hybrid_cloud/index.md"
           - "Hybrid Cloud":
                 - "Overview": "cloud/hybrid_cloud/index.md"
                 - "Resources": "cloud/hybrid_cloud/resources.md"

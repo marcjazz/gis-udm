@@ -12,6 +12,10 @@ This site contains all the course plans, labs, and materials for the Professiona
     Covers virtualization fundamentals.
     [Go to course](./virtualization/index.md)
 
+!!! info "Cloud"
+    Covers Cloud Concepts & Architectures.
+    [Go to course](./cloud/hybrid_cloud/index.md)
+
 ## About This Site
 
 This site is built with MkDocs and Material for MkDocs. It is automatically deployed via GitHub Actions.
