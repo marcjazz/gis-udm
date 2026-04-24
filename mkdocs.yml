@@ -119,6 +119,11 @@ markdown_extensions:
     - attr_list
     - md_in_html
     - shadcn.extensions.codexec
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:mermaid2.fence_mermaid
 
 extra:
     social:
@@ -129,6 +134,7 @@ extra:
 
 plugins:
     - search
+    - mermaid2
     - excalidraw
     - pygments:
           light: autumn

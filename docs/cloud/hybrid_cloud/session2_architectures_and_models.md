@@ -39,8 +39,8 @@ This separation requires careful consideration of the network layer. Because the
 graph LR
     subgraph "Public Cloud (e.g., Google Cloud/AWS)"
         A[User/Browser] --> B[Global Load Balancer]
-        B --> C[Web Frontend Tier (Stateless)]
-        C --> D[API Service Tier (Stateless)]
+        B --> C[Web Frontend Tier - Stateless]
+        C --> D[API Service Tier - Stateless]
         D -.-> |Cache Query| Cache[(Cloud Cache/Redis)]
     end
 
@@ -127,12 +127,12 @@ graph TD
     User((Global Users)) --> GLB[Global Load Balancer / Intelligent DNS]
 
     subgraph "Region 1 (On-Premises Data Center)"
-        GLB --> OP[App Instance (Container)]
+        GLB --> OP[App Instance - Container]
         OP --> DB1[(Local DB Node)]
     end
 
     subgraph "Region 2 (Public Cloud Region)"
-        GLB --> GC[App Instance (Container)]
+        GLB --> GC[App Instance - Container]
         GC --> DB2[(Cloud DB Node)]
     end
 

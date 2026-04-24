@@ -2,3 +2,4 @@ mkdocs>=1.4.0
 pymdown-extensions>=9.0
 mkdocs-shadcn>=0.9.8
 mkdocs-pygments>=0.1.0
+mkdocs-mermaid2-plugin>=1.0.0

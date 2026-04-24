@@ -1,53 +1,57 @@
 {
-  "mcpServers": {
-    "git": {
-      "command": "uvx",
-      "args": [
-        "mcp-server-git",
-        "--repository",
-        "/home/marco/Projects/training-materials/gis-udm"
-      ]
-    },
-    "github": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "-e",
-        "GITHUB_TOOLSETS",
-        "-e",
-        "GITHUB_READ_ONLY",
-        "ghcr.io/github/github-mcp-server"
-      ],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_PERSONAL_ACCESS_TOKEN}",
-        "GITHUB_TOOLSETS": "${env:GITHUB_TOOLSETS}",
-        "GITHUB_READ_ONLY": "${env:GITHUB_READ_ONLY}"
-      }
-    },
-    "sequentialthinking": {
-      "command": "docker",
-      "args": [
-        "run",
-        "--rm",
-        "-i",
-        "mcp/sequentialthinking"
-      ]
-    },
-    "filesystem": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "--mount",
-        "type=bind,src=/home/marco/Projects/,dst=/projects",
-        "mcp/filesystem",
-        "/projects"
-      ]
-    }
-  }
+	"mcpServers": {
+		"git": {
+			"command": "uvx",
+			"args": [
+				"mcp-server-git",
+				"--repository",
+				"/home/marco/Projects/training-materials/gis-udm"
+			]
+		},
+		"github": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"GITHUB_PERSONAL_ACCESS_TOKEN",
+				"-e",
+				"GITHUB_TOOLSETS",
+				"-e",
+				"GITHUB_READ_ONLY",
+				"ghcr.io/github/github-mcp-server"
+			],
+			"env": {
+				"GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_PERSONAL_ACCESS_TOKEN}",
+				"GITHUB_TOOLSETS": "${env:GITHUB_TOOLSETS}",
+				"GITHUB_READ_ONLY": "${env:GITHUB_READ_ONLY}"
+			}
+		},
+		"sequentialthinking": {
+			"command": "docker",
+			"args": [
+				"run",
+				"--rm",
+				"-i",
+				"mcp/sequentialthinking"
+			]
+		},
+		"filesystem": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"--mount",
+				"type=bind,src=/home/marco/Projects/,dst=/projects",
+				"mcp/filesystem",
+				"/projects"
+			],
+			"alwaysAllow": [
+				"read_file",
+				"list_allowed_directories"
+			]
+		}
+	}
 }
