@@ -209,9 +209,30 @@ The CAP Theorem states that a distributed data store can only simultaneously pro
 - **Strong Consistency & Distributed Databases:** For financial or critical transactional data, use specialized distributed SQL databases designed for global consistency (like Google Cloud Spanner or CockroachDB). These systems use advanced consensus algorithms (like Paxos or Raft) to ensure data is strictly consistent, though often at the cost of slightly higher write latency.
 - **Intelligent Routing (Sticky Sessions):** Ensure that a specific user's requests are always routed to the same environment (Region A) during their active session. This avoids them encountering out-of-sync data from a different region, buying time for the background replication to complete.
 
-#### Image Prompt: Synchronicity and Consistency
+#### Synchronicity and Consistency
 
-_Prompt:_ A conceptual diagram illustrating Data Consistency across a Hybrid Cloud. Show two databases, one labeled 'Cloud' and one 'On-Premises', separated by distance. Between them, draw a glowing, bi-directional energy stream representing 'Replication'. Above them, show a set of scales balanced perfectly, holding an 'Availability' icon on one side and a 'Consistency' icon on the other. The image should convey the delicate balance required in distributed data management.
+```mermaid
+graph TD
+    subgraph "Public Cloud"
+        DB_Cloud[(Cloud Database)]
+    end
+
+    subgraph "On-Premises"
+        DB_OnPrem[(On-Premises Database)]
+    end
+
+    DB_Cloud <--> |"Replication (Sync/Async)"| DB_OnPrem
+
+    subgraph "CAP Theorem Balance"
+        direction LR
+        A[Availability] --- S{{"Scales of Balance"}}
+        S --- C[Consistency]
+    end
+
+    style S fill:#f9f,stroke:#333,stroke-width:2px
+    style DB_Cloud fill:#69f,stroke:#333,stroke-width:2px
+    style DB_OnPrem fill:#69f,stroke:#333,stroke-width:2px
+```
 
 ---
 
@@ -229,9 +250,29 @@ SecureBank wants to leverage Google Cloud's **Vertex AI** for real-time, machine
 - **Latency SLAs:** The entire fraud check must occur during the credit card authorization flow. The round-trip time from the moment the point-of-sale terminal sends the request to the moment SecureBank approves or declines the transaction must be under 50 milliseconds to prevent terminal timeouts.
 - **Resilience:** If the cloud connection fails, the bank must still be able to process transactions (falling back to a basic local ruleset).
 
-### Image Prompt: Fraud Detection System Architecture
+### Fraud Detection System Architecture
 
-_Prompt:_ A comprehensive technical diagram illustrating a Tiered Hybrid Cloud architecture for a banking fraud detection system. On the left side ('On-Premises'), show a 'Core Banking Mainframe' and a 'Tokenization/Anonymization Gateway' glowing with secure green indicators. On the right side ('Public Cloud'), show an 'AI/ML Processing Engine' (Vertex AI) with futuristic blue glowing neural network nodes. Connect the two with a thick, fast-moving, glowing data pipeline labeled 'Dedicated Low-Latency Interconnect'. Inside the pipeline, depict data packets stripped of personal identities. The style should be professional, isometric 3D, suitable for enterprise IT documentation.
+```mermaid
+graph LR
+    subgraph "On-Premises Data Center"
+        direction TB
+        Mainframe["Core Banking Mainframe"]
+        Gateway["Tokenization/Anonymization Gateway"]
+        Mainframe --> Gateway
+    end
+
+    subgraph "Public Cloud (Google Cloud)"
+        direction TB
+        VertexAI["AI/ML Processing Engine (Vertex AI)"]
+    end
+
+    Gateway -- "Dedicated Low-Latency Interconnect<br/>(Anonymized Data Packets)" --> VertexAI
+    VertexAI -- "Fraud Score (Sync Response)" --> Gateway
+    Gateway -- "Approve/Decline" --> Mainframe
+
+    style Gateway fill:#dfd,stroke:#333,stroke-width:2px
+    style VertexAI fill:#dff,stroke:#333,stroke-width:2px
+```
 
 ### Tasks
 

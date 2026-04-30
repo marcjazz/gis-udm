@@ -39,7 +39,33 @@ _An incorrect choice can lead to crippling latency, massive egress costs, or sec
 
 Splitting an application's logical layers across different physical or cloud environments.
 
-**Deep-Dive:**
+```mermaid
+graph TD
+    subgraph PublicCloud ["Public Cloud (Elasticity)"]
+        FE[Front-end / UI]
+        LB[Load Balancer / CDN]
+        Logic[Application Logic]
+        FE --- Logic
+        LB --- FE
+    end
+
+    subgraph OnPrem ["On-Premises (Security)"]
+        DB[(System of Record / DB)]
+        Legacy[Legacy Systems]
+    end
+
+    Logic <== "Secure Tunnel (VPN/Interconnect)" ==> DB
+    Logic <== "Integration" ==> Legacy
+
+    style PublicCloud fill:#2980b9,stroke:#fff,color:#fff
+    style OnPrem fill:#27ae60,stroke:#fff,color:#fff
+```
+
+---
+
+## Tiered Hybrid: Deep-Dive
+
+**Architecture Details:**
 
 - **Front-end / Logic:** Placed in public cloud for elasticity, CDNs, and load-balancing.
 - **Back-end / Data (System of Record):** Remains securely on-premises.
@@ -69,7 +95,36 @@ Splitting an application's logical layers across different physical or cloud env
 
 Different workloads or distinct applications distributed across entirely different environments.
 
-**Deep-Dive:**
+```mermaid
+graph LR
+    subgraph Azure ["Azure (Core Ops)"]
+        CoreApp[Core Business App]
+        ERP[ERP System]
+    end
+
+    subgraph GCP ["GCP (Data & AI)"]
+        BQ[(BigQuery)]
+        ML[Vertex AI]
+    end
+
+    subgraph OnPrem ["On-Premises (Legacy)"]
+        Mainframe[Mainframe]
+    end
+
+    ERP -. "Sync/Async" .-> Mainframe
+    CoreApp -- "Data Export" --> BQ
+    BQ --- ML
+
+    style Azure fill:#0078d4,color:#fff
+    style GCP fill:#4285f4,color:#fff
+    style OnPrem fill:#27ae60,color:#fff
+```
+
+---
+
+## Partitioned Multicloud: Deep-Dive
+
+**Architecture Details:**
 
 - "Best of Breed" or "Fit-for-Purpose" approach.
 - Allows using specific proprietary services (e.g., BigQuery, AWS Lambda).
@@ -100,7 +155,36 @@ Different workloads or distinct applications distributed across entirely differe
 
 Running identical, fully functional instances of the _same_ service in multiple environments simultaneously.
 
-**Deep-Dive:**
+```mermaid
+graph TB
+    GSLB[Global Server Load Balancer]
+
+    subgraph SiteA ["Environment A (On-Prem)"]
+        AppA[App Instance]
+        DBA[(Local DB)]
+        AppA --- DBA
+    end
+
+    subgraph SiteB ["Environment B (Cloud)"]
+        AppB[App Instance]
+        DBB[(Local DB)]
+        AppB --- DBB
+    end
+
+    GSLB --> AppA
+    GSLB --> AppB
+    DBA <== "Global Replication" ==> DBB
+
+    style SiteA fill:#27ae60,color:#fff
+    style SiteB fill:#2980b9,color:#fff
+    style GSLB fill:#f1c40f
+```
+
+---
+
+## Distributed Pattern: Deep-Dive
+
+**Architecture Details:**
 
 - Also known as "Multi-site", "Active-Active", or "Cloud-Bursting".
 - Treats infrastructure as completely fungible.
@@ -179,6 +263,10 @@ graph TB
     style Analytics fill:#222,stroke:#f0f,color:#f0f
 ```
 
+---
+
+## B. Data Gravity: Impact
+
 **The Challenge:**
 
 - Moving large datasets incurs time and high egress fees.
@@ -219,14 +307,14 @@ graph LR
     style DB_Cloud fill:#2980b9,stroke:#fff,color:#fff
 ```
 
+---
+
+## C. Synchronicity & Consistency: Challenges
+
 **The Challenge:**
 
 - CAP Theorem limits guarantees in distributed systems.
 - Balancing absolute consistency vs. high availability.
-
----
-
-## C. Synchronicity & Consistency (Cont.)
 
 **Mitigation Strategies:**
 
