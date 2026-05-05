@@ -3,139 +3,144 @@ site_url: https://learn.kdmarc.xyz
 repo_url: https://github.com/marcjazz/gis-udm
 
 theme:
-    name: shadcn
-    logo: assets/logo.svg
+      name: shadcn
+      logo: assets/logo.svg
 
-    palette:
-        - scheme: default
-          primary: blue
-          accent: blue
-          toggle:
-              icon: material/brightness-7
-              name: Switch to dark mode
-        - scheme: slate
-          primary: blue
-          accent: blue
-          toggle:
-              icon: material/brightness-4
-              name: Switch to light mode
-    features:
-        - navigation.tabs
-        - navigation.top
-        - navigation.expand
-    show_title: false
-    show_stargazers: false
-    icon: assets/logo.svg
-    topbar_sections: true
-    show_datetime: true
+      palette:
+            - scheme: default
+              primary: blue
+              accent: blue
+              toggle:
+                    icon: material/brightness-7
+                    name: Switch to dark mode
+            - scheme: slate
+              primary: blue
+              accent: blue
+              toggle:
+                    icon: material/brightness-4
+                    name: Switch to light mode
+      features:
+            - navigation.tabs
+            - navigation.top
+            - navigation.expand
+      show_title: false
+      show_stargazers: false
+      icon: assets/logo.svg
+      topbar_sections: true
+      show_datetime: true
 
 nav:
-    - "Home": "index.md"
-    - "Linux":
-          - "Linux": "linux/index.md"
-          - "Package Management":
-                - "Overview": "linux/installation_and_pkg_mgnt/index.md"
-                - "Ecosystem Intro": "linux/installation_and_pkg_mgnt/session1_introduction_and_e\
-                      cosystem.md"
-                - "Disk Design": "linux/installation_and_pkg_mgnt/session2_disk_design_and_filesy\
-                      stems.md"
-                - "Boot Process": "linux/installation_and_pkg_mgnt/session3_boot_process_and_grub\
-                      2.md"
-                - "Shared Libraries": "linux/installation_and_pkg_mgnt/session4_shared_libraries.\
-                      md"
-                - "Debian/APT": "linux/installation_and_pkg_mgnt/session5_debian_package_manageme\
-                      nt.md"
-                - "RedHat/DNF": "linux/installation_and_pkg_mgnt/session6_redhat_package_manageme\
-                      nt.md"
-                - "LVM": "linux/installation_and_pkg_mgnt/session7_lvm.md"
-                - "Hardening": "linux/installation_and_pkg_mgnt/session8_hardening_and_recovery.m\
-                      d"
+      - "Home": "index.md"
+      - "Linux":
+              - "Linux": "linux/index.md"
+              - "Package Management":
+                      - "Overview": "linux/installation_and_pkg_mgnt/index.md"
+                      - "Ecosystem Intro": "linux/installation_and_pkg_mgnt/session1_introduction_and_e\
+                              cosystem.md"
+                      - "Disk Design": "linux/installation_and_pkg_mgnt/session2_disk_design_and_filesy\
+                              stems.md"
+                      - "Boot Process": "linux/installation_and_pkg_mgnt/session3_boot_process_and_grub\
+                              2.md"
+                      - "Shared Libraries": "linux/installation_and_pkg_mgnt/session4_shared_libraries.\
+                              md"
+                      - "Debian/APT": "linux/installation_and_pkg_mgnt/session5_debian_package_manageme\
+                              nt.md"
+                      - "RedHat/DNF": "linux/installation_and_pkg_mgnt/session6_redhat_package_manageme\
+                              nt.md"
+                      - "LVM": "linux/installation_and_pkg_mgnt/session7_lvm.md"
+                      - "Hardening": "linux/installation_and_pkg_mgnt/session8_hardening_and_recovery.m\
+                              d"
 
-          - "Shell Scripting":
-                - "Overview": "linux/shell_scripting/index.md"
-                - "Shell Environment": "linux/shell_scripting/session1_mastering_the_shell_enviro\
-                      nment.md"
-                - "Scripting Intro": "linux/shell_scripting/session2_introduction_to_shell_script\
-                      ing.md"
-                - "Bash Basics": "linux/shell_scripting/session3_bash_scripting_fundamentals.md"
-                - "Control Structures": "linux/shell_scripting/session4_logic_and_control_structu\
-                      res.md"
-                - "Loops": "linux/shell_scripting/session5_loops_and_iteration.md"
-                - "Functions": "linux/shell_scripting/session6_functions_and_modularity.md"
-                - "SQL Intro": "linux/shell_scripting/session7_introduction_to_data_management_wi\
-                      th_sql.md"
-                - "Process Automation": "linux/shell_scripting/session8_process_management_and_au\
-                      tomation.md"
+              - "Shell Scripting":
+                      - "Overview": "linux/shell_scripting/index.md"
+                      - "Shell Environment": "linux/shell_scripting/session1_mastering_the_shell_enviro\
+                              nment.md"
+                      - "Scripting Intro": "linux/shell_scripting/session2_introduction_to_shell_script\
+                              ing.md"
+                      - "Bash Basics": "linux/shell_scripting/session3_bash_scripting_fundamentals.md"
+                      - "Control Structures": "linux/shell_scripting/session4_logic_and_control_structu\
+                              res.md"
+                      - "Loops": "linux/shell_scripting/session5_loops_and_iteration.md"
+                      - "Functions": "linux/shell_scripting/session6_functions_and_modularity.md"
+                      - "SQL Intro": "linux/shell_scripting/session7_introduction_to_data_management_wi\
+                              th_sql.md"
+                      - "Process Automation": "linux/shell_scripting/session8_process_management_and_au\
+                              tomation.md"
 
-          - "AI Admin": "linux/ai_in_admin/index.md"
+              - "AI Admin": "linux/ai_in_admin/index.md"
 
-          - "Labs":
-                - "AI Admin Lab": "linux/labs/ai_in_admin.md"
-                - "AI Admin Lab 2": "linux/labs/ai_in_admin_lab2.md"
-                - "Phoenix Server": "linux/labs/phoenix_server.md"
-                - "Shell Scripting": "linux/labs/shell_scripting.md"
-                - "ShellOps Arena": "linux/labs/shellops_arena.md"
-    - "Virtualization":
-          - "Virtualization": "virtualization/index.md"
-          - "Virtualization Fundamentals":
-                - "Overview": "virtualization/virtualization_fundamentals/index.md"
-                - "Virtualization Intro": "virtualization/virtualization_fundamentals/session1_in\
-                      troduction_to_virtualization.md"
-                - "Hypervisors": "virtualization/virtualization_fundamentals/session2_hypervisors\
-                      _deep_dive.md"
-                - "First VM": "virtualization/virtualization_fundamentals/session3_creating_your_\
-                      first_vm.md"
-                - "VM Hardware": "virtualization/virtualization_fundamentals/session4_vm_hardware\
-                      _and_configuration.md"
-                - "Network Modes": "virtualization/virtualization_fundamentals/session5_virtual_n\
-                      etwork_modes_in_hypervisors.md"
-                - "Snapshots": "virtualization/virtualization_fundamentals/session6_snapshots_for\
-                      _state_management.md"
-                - "Cloning": "virtualization/virtualization_fundamentals/session7_cloning_and_tem\
-                      plates.md"
-                - "Automation": "virtualization/virtualization_fundamentals/session8_automation_a\
-                      nd_portability.md"
-          - "Labs":
-                - "Vagrant Lab": "virtualization/labs/vagrant_lab.md"
-    - "Cloud":
-          - "Cloud": "cloud/hybrid_cloud/index.md"
-          - "Hybrid Cloud":
-                - "Overview": "cloud/hybrid_cloud/index.md"
-                - "Resources": "cloud/hybrid_cloud/resources.md"
-                - "Intro to Hybrid Cloud": "cloud/hybrid_cloud/session1_intro_to_hybrid_cloud.md"
-                - "Architectures and Models": "cloud/hybrid_cloud/session2_architectures_and_models.md"
-                - "Networking Strategies": "cloud/hybrid_cloud/session3_networking_strategies.md"
-                - "IAM and Security": "cloud/hybrid_cloud/session4_iam_and_security.md"
-                - "Data Management": "cloud/hybrid_cloud/session5_data_management.md"
-                - "Monitoring and Operations": "cloud/hybrid_cloud/session6_monitoring_and_operations.md"
-                - "Security and Compliance": "cloud/hybrid_cloud/session7_security_and_compliance.md"
-                - "Implementation and Use Cases": "cloud/hybrid_cloud/session8_implementation_and\
-                      _use_cases.md"
+              - "Labs":
+                      - "AI Admin Lab": "linux/labs/ai_in_admin.md"
+                      - "AI Admin Lab 2": "linux/labs/ai_in_admin_lab2.md"
+                      - "Phoenix Server": "linux/labs/phoenix_server.md"
+                      - "Shell Scripting": "linux/labs/shell_scripting.md"
+                      - "ShellOps Arena": "linux/labs/shellops_arena.md"
+      - "Virtualization":
+              - "Virtualization": "virtualization/index.md"
+              - "Virtualization Fundamentals":
+                      - "Overview": "virtualization/virtualization_fundamentals/index.md"
+                      - "Virtualization Intro": "virtualization/virtualization_fundamentals/session1_in\
+                              troduction_to_virtualization.md"
+                      - "Hypervisors": "virtualization/virtualization_fundamentals/session2_hypervisors\
+                              _deep_dive.md"
+                      - "First VM": "virtualization/virtualization_fundamentals/session3_creating_your_\
+                              first_vm.md"
+                      - "VM Hardware": "virtualization/virtualization_fundamentals/session4_vm_hardware\
+                              _and_configuration.md"
+                      - "Network Modes": "virtualization/virtualization_fundamentals/session5_virtual_n\
+                              etwork_modes_in_hypervisors.md"
+                      - "Snapshots": "virtualization/virtualization_fundamentals/session6_snapshots_for\
+                              _state_management.md"
+                      - "Cloning": "virtualization/virtualization_fundamentals/session7_cloning_and_tem\
+                              plates.md"
+                      - "Automation": "virtualization/virtualization_fundamentals/session8_automation_a\
+                              nd_portability.md"
+              - "Labs":
+                      - "Vagrant Lab": "virtualization/labs/vagrant_lab.md"
+      - "Cloud":
+              - "Cloud": "cloud/hybrid_cloud/index.md"
+              - "Hybrid Cloud":
+                      - "Overview": "cloud/hybrid_cloud/index.md"
+                      - "Resources": "cloud/hybrid_cloud/resources.md"
+                      - "Intro to Hybrid Cloud": "cloud/hybrid_cloud/session1_intro_to_hybrid_cloud.md"
+                      - "Architectures and Models": "cloud/hybrid_cloud/session2_architectures_and_mode\
+                              ls.md"
+                      - "Networking Strategies": "cloud/hybrid_cloud/session3_networking_strategies.md"
+                      - "IAM and Security": "cloud/hybrid_cloud/session4_iam_and_security.md"
+                      - "Data Management": "cloud/hybrid_cloud/session5_data_management.md"
+                      - "Monitoring and Operations": "cloud/hybrid_cloud/session6_monitoring_and_operat\
+                              ions.md"
+                      - "Security and Compliance": "cloud/hybrid_cloud/session7_security_and_compliance\
+                              .md"
+                      - "Implementation and Use Cases": "cloud/hybrid_cloud/session8_implementation_and\
+                              _use_cases.md"
+                      - "Practical Lab": "cloud/hybrid_cloud/lab_practical_hybrid.md"
 
 # Extensions
 markdown_extensions:
-    - admonition
-    - codehilite
-    - attr_list
-    - md_in_html
-    - shadcn.extensions.codexec
-    - pymdownx.superfences:
-          custom_fences:
-              - name: mermaid
-                class: mermaid
-                format: !!python/name:mermaid2.fence_mermaid
+      - admonition
+      - codehilite
+      - attr_list
+      - md_in_html
+      - shadcn.extensions.codexec
+      - pymdownx.superfences:
+              custom_fences:
+                    - name: mermaid
+                      class: mermaid
+                      format:
 
+                            !!python/name:mermaid2.fence_mermaid ""
 extra:
-    social:
-        - icon: fontawesome/brands/github
-          link: https://github.com/marcjazz
-        - icon: fontawesome/brands/linkedin
-          link: https://www.linkedin.com/in/kuidja-marco/
+      social:
+            - icon: fontawesome/brands/github
+              link: https://github.com/marcjazz
+            - icon: fontawesome/brands/linkedin
+              link: https://www.linkedin.com/in/kuidja-marco/
 
 plugins:
-    - search
-    - mermaid2
-    - excalidraw
-    - pygments:
-          light: autumn
-          dark: github-dark
+      - search
+      - mermaid2
+      - excalidraw
+      - pygments:
+              light: autumn
+              dark: github-dark
