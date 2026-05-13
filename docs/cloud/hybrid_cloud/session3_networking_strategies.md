@@ -104,10 +104,10 @@ DNS is the "phonebook" of your network. In a hybrid setup, an instance in the cl
 
 #### DNS Patterns
 
-1.  **Conditional Forwarding (The Standard):**
+1. **Conditional Forwarding (The Standard):**
     - The cloud DNS (e.g., AWS Route 53 Resolver, Azure DNS Private Resolver) is configured to forward queries for your on-premises domain (`corp.internal`) to your on-premises DNS servers.
     - Conversely, on-premises DNS servers forward queries for cloud domains (`cloud.internal`) to a Cloud DNS inbound endpoint.
-2.  **DNS Split-Horizon:**
+2. **DNS Split-Horizon:**
     - **The Issue:** Maintaining different versions of the same DNS zone for internal and external users. In hybrid cloud, if not managed carefully, a server might resolve a service to its public IP rather than its private hybrid-link IP, leading to increased costs and security risks.
     - **Mitigation:** Use "Private Zones" in the cloud that are only accessible from within your VPC/VNet and your connected on-premises network.
 
@@ -197,15 +197,15 @@ sequenceDiagram
 
 #### Phase 1: Connectivity Design
 
-1.  **Primary Link Selection:** Select and justify a primary connectivity method (VPN vs. Interconnect vs. Partner). Consider the 200TB migration and the 5-minute RTO (Recovery Time Objective).
-2.  **Redundancy Strategy:** Design a backup path. If the primary link fails, how will traffic flow? Specify if you will use a second physical link or a fallback VPN.
-3.  **IP Address Planning:** Verify there are no CIDR overlaps. Create a table showing the Hub, Spokes, and On-Premises ranges.
+1. **Primary Link Selection:** Select and justify a primary connectivity method (VPN vs. Interconnect vs. Partner). Consider the 200TB migration and the 5-minute RTO (Recovery Time Objective).
+2. **Redundancy Strategy:** Design a backup path. If the primary link fails, how will traffic flow? Specify if you will use a second physical link or a fallback VPN.
+3. **IP Address Planning:** Verify there are no CIDR overlaps. Create a table showing the Hub, Spokes, and On-Premises ranges.
 
 #### Phase 2: Routing & Security Setup
 
-1.  **BGP Configuration:** Define the ASN for On-Premises (`65010`) and the Cloud (`65515`). Describe how you will prevent "Asymmetric Routing" if both the primary and backup links are active.
-2.  **Hub-and-Spoke Traffic Flow:** Explain the routing table changes needed in the **Production Spoke** to ensure its default route (`0.0.0.0/0`) points to the Hub Firewall.
-3.  **Encryption:** Since compliance requires encryption even over private lines, explain how you would implement "MACsec" or "IPsec over Interconnect."
+1. **BGP Configuration:** Define the ASN for On-Premises (`65010`) and the Cloud (`65515`). Describe how you will prevent "Asymmetric Routing" if both the primary and backup links are active.
+2. **Hub-and-Spoke Traffic Flow:** Explain the routing table changes needed in the **Production Spoke** to ensure its default route (`0.0.0.0/0`) points to the Hub Firewall.
+3. **Encryption:** Since compliance requires encryption even over private lines, explain how you would implement "MACsec" or "IPsec over Interconnect."
 
 #### Phase 3: DNS Resolution
 
