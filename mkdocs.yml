@@ -144,6 +144,7 @@ nav:
                   - "Labs":
                             - "Practical Lab": "cloud/hybrid_cloud/labs/lab_practical_hybrid.md"
                             - "Comprehensive Lab": "cloud/hybrid_cloud/labs/lab_comprehensive.md"
+                            - "Zero Trust Hybrid": "cloud/hybrid_cloud/labs/lab_zero_trust_hybrid.md"
 
 # Extensions
 markdown_extensions:
